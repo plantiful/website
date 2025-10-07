@@ -1,0 +1,17 @@
+{
+  "header": {
+    "logo_alt": "Plantiful"
+  },
+  "hero": {
+    "title": "Protože na rostlinách\nnám záleží.",
+    "subtitle": "Objev svoje vnitřní já\nv pěstování."
+  },
+  "intro": {
+    "title": "Představujeme ti aplikaci Plantiful.",
+    "subtitle": "Právě pokud jsi s rostlinami v bezsnázích."
+  },
+  "metadata": {
+    "title": "Plantiful - Protože na rostlinách nám záleží",
+    "description": "Plantiful je mobilní aplikace pro pěstování rostlin. Objevte náš příběh od myšlenky až po open-source vydání."
+  }
+}

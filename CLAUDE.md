@@ -4,7 +4,18 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a Next.js 15 personal website using:
+This is a showcase website documenting the Plantiful team's journey creating a mobile app:
+- **Purpose**: Chronicles the team's journey from initial idea through competitions, internship, whitepaper, and open-sourcing
+- **Key Milestones**:
+  - Idea inception and development
+  - Kyndyrl Challenge competition
+  - One-year internship at Kyndryl
+  - JA Czech and JA Expo competitions (multiple category placements)
+  - Whitepaper publication
+  - Open-source release
+
+**Technical Stack**:
+This is a Next.js 15 website using:
 - **Framework**: Next.js 15.5.4 with App Router
 - **React**: 19.1.0
 - **TypeScript**: Yes

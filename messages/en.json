@@ -1,0 +1,17 @@
+{
+  "header": {
+    "logo_alt": "Plantiful"
+  },
+  "hero": {
+    "title": "Because we care\nabout plants.",
+    "subtitle": "Discover your inner self\nthrough growing."
+  },
+  "intro": {
+    "title": "Introducing the Plantiful app.",
+    "subtitle": "Especially if you're struggling with plants."
+  },
+  "metadata": {
+    "title": "Plantiful - Because we care about plants",
+    "description": "Plantiful is a mobile app for plant growing. Discover our journey from idea to open-source release."
+  }
+}
