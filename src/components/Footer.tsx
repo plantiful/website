@@ -1,13 +1,16 @@
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 export default function Footer() {
+  const t = useTranslations();
+
   return (
     <footer className="w-full">
       <div className="mx-auto w-full max-w-[1600px] px-6 sm:px-10 md:px-16 lg:px-24">
         <div className="flex flex-wrap items-center justify-center gap-10 sm:gap-14 md:gap-20 py-10">
           <Image
             src="/purkynka.png"
-            alt="Purkynka"
+            alt={t("footer.partners.purkynka")}
             width={200}
             height={60}
             className="h-12 sm:h-14 md:h-16 w-auto object-contain"
@@ -15,21 +18,21 @@ export default function Footer() {
           />
           <Image
             src="/kyndryl.png"
-            alt="Kyndryl"
+            alt={t("footer.partners.kyndryl")}
             width={200}
             height={60}
             className="h-12 sm:h-14 md:h-16 w-auto object-contain"
           />
           <Image
             src="/JA.png"
-            alt="JA Czech"
+            alt={t("footer.partners.ja")}
             width={200}
             height={60}
             className="h-12 sm:h-14 md:h-16 w-auto object-contain"
           />
           <Image
             src="/JIC.png"
-            alt="JIC"
+            alt={t("footer.partners.jic")}
             width={200}
             height={60}
             className="h-12 sm:h-14 md:h-16 w-auto object-contain"
@@ -43,17 +46,16 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
             <div className="md:col-span-2">
               <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                Let's grow together
+                {t("footer.cta_title")}
               </h3>
               <p className="text-emerald-100/80 text-base md:text-lg max-w-xl">
-                Connect with us to learn more about Plantiful and how we're
-                helping plant lovers care for their green companions.
+                {t("footer.cta_description")}
               </p>
             </div>
 
             <div className="space-y-4">
               <h4 className="text-sm font-semibold tracking-wider uppercase text-emerald-300">
-                Contact
+                {t("footer.contact_title")}
               </h4>
               <div className="space-y-2 text-emerald-100/90">
                 <a
@@ -62,13 +64,13 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="block hover:text-white transition-colors"
                 >
-                  Instagram: plantiful.cz
+                  {t("footer.instagram")}
                 </a>
                 <a
                   href="mailto:info@plantiful.cz"
                   className="block hover:text-white transition-colors"
                 >
-                  Email: info@plantiful.cz
+                  {t("footer.email")}
                 </a>
               </div>
             </div>
@@ -76,7 +78,7 @@ export default function Footer() {
 
           <div className="mt-16 pt-8 border-t border-emerald-800/50">
             <p className="text-center text-sm text-emerald-100/60">
-              © 2025 Plantiful
+              {t("footer.copyright")}
             </p>
           </div>
         </div>

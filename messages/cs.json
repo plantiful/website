@@ -4,11 +4,67 @@
   },
   "hero": {
     "title": "Protože na rostlinách\nnám záleží.",
-    "subtitle": "Objev svoje vnitřní já\nv pěstování."
+    "subtitle": "Objev svoje vnitřní já\nv pěstování.",
+    "github_button": "Zobrazit na GitHubu",
+    "journey_button": "Náš příběh",
+    "video_alt": "Sleduj ukázkové video",
+    "background_alt": "Pozadí botanické zahrady"
   },
   "intro": {
     "title": "Představujeme ti aplikaci Plantiful.",
-    "subtitle": "Právě pokud jsi s rostlinami v bezsnázích."
+    "subtitle": "Právě pokud jsi s rostlinami v bezsnázích.",
+    "phones_alt": "Obrazovky aplikace Plantiful na telefonech"
+  },
+  "acks": {
+    "title": "Poděkování",
+    "description": "Jsme nesmírně vděční mentorům z RedHat Summer Campu, společnosti Kyndryl, JA Czech, Střední škole Purkyňova a JICu, kteří nám dali prostor experimentovat, trpělivě sdíleli své zkušenosti a věřili, že Plantiful může skutečně pomáhat lidem. Jejich vedení nás motivovalo k rychlejším iteracím, odvážným prototypům a neustálému zvyšování laťky uživatelského zážitku.\n\nPoděkování patří také komunitám, partnerům, rodinám a prvním uživatelům, kteří nám poskytovali zpětnou vazbu, testovali nehotové verze a slavili s námi každou dosaženou metu. Vaše důvěra z této cesty dělá víc než jen školní projekt — pomáhá nám růst.",
+    "image_alt": "Fotografie týmu Plantiful v telefoním mockupu",
+    "caption": "Tým společnosti Plantiful"
+  },
+  "timeline": {
+    "title": "Naše cesta",
+    "foreword": {
+      "title": "RedHat Summer Camp",
+      "link": "https://research.redhat.com/red-hat-summer-camp/",
+      "description": "Plantiful vzniklo na RedHat Summer Campu 2022, kde jsme prošli různými workshopy a následně vytvářeli finální projekt za pomocí všeho, co jsme se naučili. V průběhu pár hodin jsme si ujasnili nápad, prezentaci a řeč. Konkurence byla silná, ale i tak se nám podařilo vyhrát."
+    },
+    "kyndryl_challenge": {
+      "title": "Kyndryl Challenge",
+      "description": "Výhra v RedHatu nás namotivovala v nápadu pokračovat dál a přihlásili jsme se do Kyndryl Challenge, kde jsme uspěli a byli nám tudíž nabídnuta stáž a začali jsme vytvářet aplikaci. Zkompletovali jsme náš projektový nápad a ještě k němu mnohé přidali. Mezi naše největší přednosti určitě patří úzká spolupráce s malými zahrádkářstvími a následná integrace v aplikaci."
+    },
+    "kyndryl": {
+      "title": "Kyndryl Internship",
+      "description": "Dnes jsme nasadili 5 nových komponent na Aceternity"
+    },
+    "ja_expo": {
+      "title": "JA Expo",
+      "description": "JA expo"
+    },
+    "fekt_eeict": {
+      "title": "FEKT EEICT",
+      "description": "FEKT EEICT"
+    },
+    "release": {
+      "title": "Open-source Release",
+      "description": "Open-source Release"
+    }
+  },
+  "footer": {
+    "partners": {
+      "purkynka": "Purkynka",
+      "kyndryl": "Kyndryl",
+      "ja": "JA Czech",
+      "jic": "JIC"
+    },
+    "cta_title": "Pojďme růst společně",
+    "cta_description": "Spojte se s námi a dozvíte se více o Plantiful a jak pomáháme milovníkům rostlin pečovat o jejich zelené společníky.",
+    "contact_title": "Kontakt",
+    "instagram": "Instagram: plantiful.cz",
+    "email": "Email: info@plantiful.cz",
+    "copyright": "© 2025 Plantiful"
+  },
+  "common": {
+    "decorative_alt": "dekorativní mrak"
   },
   "metadata": {
     "title": "Plantiful - Protože na rostlinách nám záleží",

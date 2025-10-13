@@ -1,11 +1,16 @@
+"use client";
+
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { useState } from "react";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
-import { TimelineDemo } from "@/components/ui/timeline-demo";
+import { Timeline } from "@/components/ui/timeline";
 import { HeroVideoDialog } from "@/components/ui/hero-video-dialog";
+import { getTimelineData } from "@/data/timelineData";
 
 export default function Home() {
   const t = useTranslations();
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
 
   return (
     <main className="relative w-full bg-white">
@@ -13,19 +18,29 @@ export default function Home() {
       <section className="relative min-h-screen overflow-hidden">
         {/* Background image */}
         <Image
-          src="/bg_us.png"
-          alt="Botanical garden background"
+          src="/bg.png"
+          alt={t("hero.background_alt")}
           fill
           priority
-          className="object-cover"
+          className=""
           sizes="100vw"
         />
 
         {/* Left-to-right emerald overlay, matching the reference tint */}
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-emerald-900/70 via-emerald-900/55 to-transparent" />
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to right, rgba(6, 78, 59, 0.7) 0%, rgba(6, 78, 59, 0.55) 35%, transparent 60%)",
+          }}
+        />
 
         {/* Header */}
-        <header className="absolute inset-x-0 top-0 z-40">
+        <header
+          className={`absolute inset-x-0 top-0 z-40 transition-all duration-300 ${
+            isVideoOpen ? "blur-sm" : ""
+          }`}
+        >
           <div className="mx-auto w-full max-w-[1600px] flex items-center justify-between px-6 sm:px-10 md:px-16 lg:px-24 py-6 sm:py-10">
             <Image
               src="/Plantiful.svg"
@@ -40,7 +55,7 @@ export default function Home() {
 
         {/* Hero copy */}
         <div className="relative z-10 flex min-h-screen items-center">
-          <div className="mx-auto grid w-full max-w-[1600px] grid-cols-1 items-start gap-8 px-6 sm:px-10 md:grid-cols-[1fr_auto] md:px-16 lg:px-24">
+          <div className="mx-auto grid w-full max-w-[1600px] grid-cols-1 items-center gap-8 px-6 sm:px-10 md:grid-cols-[1fr_auto] md:px-16 lg:px-24">
             <div className="max-w-[820px]">
               <h1 className="text-white font-bold leading-[1.05] text-4xl md:text-5xl lg:text-6xl">
                 {t("hero.title")
@@ -82,14 +97,14 @@ export default function Home() {
                       clipRule="evenodd"
                     />
                   </svg>
-                  See on GitHub
+                  {t("hero.github_button")}
                 </a>
 
                 <a
                   href="#journey"
                   className="inline-flex items-center gap-2 px-6 py-3 bg-[#184D44] hover:bg-[#143d36] text-white font-semibold rounded-lg transition-colors shadow-lg"
                 >
-                  See our journey
+                  {t("hero.journey_button")}
                   <svg
                     className="w-4 h-4"
                     fill="none"
@@ -111,8 +126,10 @@ export default function Home() {
                 animationStyle="from-center"
                 videoSrc="https://www.youtube.com/embed/zZ-SUUvdznc?autoplay=1&rel=0"
                 thumbnailSrc="https://img.youtube.com/vi/zZ-SUUvdznc/maxresdefault.jpg"
-                thumbnailAlt="Watch an example demo video"
+                thumbnailAlt={t("hero.video_alt")}
                 className="w-[360px] sm:w-[480px] md:w-[600px] lg:w-[720px]"
+                isOpen={isVideoOpen}
+                onOpenChange={setIsVideoOpen}
               />
             </div>
           </div>
@@ -122,18 +139,18 @@ export default function Home() {
       {/* Introduction section */}
       <section className="relative z-10 w-full bg-white min-h-screen flex items-center">
         {/* scattered background artifacts */}
-        <div className="pointer-events-none select-none absolute -left-28 top-20 opacity-100">
+        <div className="pointer-events-none select-none absolute -left-40 top-20 opacity-100">
           <Image
             src="/bg_artifact.svg"
-            alt="decorative cloud"
+            alt={t("common.decorative_alt")}
             width={352}
             height={194}
           />
         </div>
-        <div className="pointer-events-none select-none absolute right-20 top-1/3 opacity-100">
+        <div className="pointer-events-none select-none absolute right-40 top-1/3 opacity-100">
           <Image
             src="/bg_artifact.svg"
-            alt="decorative cloud"
+            alt={t("common.decorative_alt")}
             width={352}
             height={194}
           />
@@ -141,21 +158,21 @@ export default function Home() {
         <div className="pointer-events-none select-none absolute left-1/3 -top-40 opacity-100">
           <Image
             src="/bg_artifact.svg"
-            alt="decorative cloud"
+            alt={t("common.decorative_alt")}
             width={352}
             height={194}
           />
         </div>
-        <div className="pointer-events-none select-none absolute left-24 bottom-20 opacity-100">
+        <div className="pointer-events-none select-none absolute left-1/4 -bottom-1/3 opacity-100">
           <Image
             src="/bg_artifact.svg"
-            alt="decorative cloud"
+            alt={t("common.decorative_alt")}
             width={352}
             height={194}
           />
         </div>
 
-        <div className="mx-auto grid w-fit max-w-[1600px] grid-cols-1 items-center justify-center gap-0 md:gap-2 py-24 px-6 sm:px-10 md:px-16 lg:px-24 md:grid-cols-[auto_auto]">
+        <div className="mx-auto grid w-fit max-w-[1600px] grid-cols-1 items-center justify-center gap-0 md:gap-2 py-24 px-6 sm:px-10 md:px-16 lg:px-24 md:pl-24 lg:pl-54 md:grid-cols-[auto_auto]">
           <div className="max-w-[540px] md:pr-0 lg:pr-2">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.02] tracking-[-0.01em] text-neutral-900">
               {t("intro.title")}
@@ -164,11 +181,11 @@ export default function Home() {
               {t("intro.subtitle")}
             </p>
           </div>
-          <div className="relative flex justify-center md:justify-end">
+          <div className="relative flex justify-center md:justify-end md:-ml-24 lg:-ml-34">
             {/* Phone showcase */}
             <Image
               src="/PhoneShowcase.svg"
-              alt="Plantiful app screens on phones"
+              alt={t("intro.phones_alt")}
               width={800}
               height={600}
               className="w-[620px] md:w-[820px] lg:w-[920px] xl:w-[1000px] h-auto drop-shadow-xl max-w-none"
@@ -178,8 +195,144 @@ export default function Home() {
       </section>
 
       {/* Timeline section (Aceternity UI demo with artifacts handled inside) */}
-      <section id="journey" className="relative w-full">
-        <TimelineDemo />
+      <section
+        id="journey"
+        className="relative w-full bg-white dark:bg-neutral-950 overflow-clip"
+      >
+        {/* Timeline content */}
+        <div className="relative">
+          <Timeline
+            data={getTimelineData(t)}
+            headerTitle={t("timeline.title")}
+          />
+        </div>
+
+        {/* background artifacts - positioned above the timeline */}
+        <div
+          key="bg-artifact-1"
+          className="pointer-events-none select-none absolute -left-1/3 top-1/2 opacity-100 z-10"
+        >
+          <Image
+            src="/big_bg_artifact.svg"
+            alt={t("common.decorative_alt")}
+            width={1024}
+            height={1024}
+          />
+        </div>
+        <div
+          key="bg-artifact-2"
+          className="pointer-events-none select-none absolute -right-1/3 top-1/4 opacity-100 z-10"
+        >
+          <Image
+            src="/big_bg_artifact.svg"
+            alt={t("common.decorative_alt")}
+            width={1024}
+            height={1024}
+          />
+        </div>
+        <div
+          key="bg-artifact-3"
+          className="pointer-events-none select-none absolute right-10 top-1/4 opacity-100 z-10"
+        >
+          <Image
+            src="/bg_artifact.svg"
+            alt={t("common.decorative_alt")}
+            width={352}
+            height={194}
+          />
+        </div>
+        <div
+          key="bg-artifact-4"
+          className="pointer-events-none select-none absolute left-12 top-2/3 opacity-100 z-10"
+        >
+          <Image
+            src="/bg_artifact.svg"
+            alt={t("common.decorative_alt")}
+            width={352}
+            height={194}
+          />
+        </div>
+        <div
+          key="bg-artifact-5"
+          className="pointer-events-none select-none absolute right-1/3 top-1/2 opacity-100 z-10"
+        >
+          <Image
+            src="/bg_artifact.svg"
+            alt={t("common.decorative_alt")}
+            width={352}
+            height={194}
+          />
+        </div>
+        <div
+          key="bg-artifact-6"
+          className="pointer-events-none select-none absolute right-20 bottom-20 opacity-100 z-10"
+        >
+          <Image
+            src="/bg_artifact.svg"
+            alt={t("common.decorative_alt")}
+            width={352}
+            height={194}
+          />
+        </div>
+      </section>
+
+      {/* Acknowledgements section */}
+      <section
+        id="acknowledgements"
+        className="relative w-full bg-white overflow-hidden py-20"
+      >
+        {/* background accents */}
+        <div className="pointer-events-none select-none absolute -left-40 -top-10 opacity-100">
+          <Image
+            src="/big_bg_artifact.svg"
+            alt={t("common.decorative_alt")}
+            width={520}
+            height={520}
+          />
+        </div>
+        <div className="pointer-events-none select-none absolute -right-40 bottom-0 opacity-100">
+          <Image
+            src="/big_bg_artifact.svg"
+            alt={t("common.decorative_alt")}
+            width={520}
+            height={520}
+          />
+        </div>
+
+        <div className="relative mx-auto flex w-full max-w-[1400px] flex-col items-center gap-10 px-6 sm:px-10 md:px-16 lg:px-24">
+          <div className="text-center max-w-4xl">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.02] tracking-[-0.01em] text-neutral-900">
+              {t("acks.title")}
+            </h2>
+            <div className="mx-auto mt-3 h-1.5 w-24 bg-emerald-800 rounded" />
+          </div>
+
+          <Image
+            src="/timeline/team_phone.png"
+            alt={t("acks.image_alt")}
+            width={1606}
+            height={768}
+            priority
+            className="w-full max-w-[920px] h-auto rounded-[32px] shadow-2xl"
+            sizes="(min-width: 1600px) 920px, (min-width: 1024px) 75vw, 100vw"
+          />
+          <p className="text-xs text-neutral-500">{t("acks.caption")}</p>
+
+          <div className="max-w-[820px] text-center">
+            {t("acks.description")
+              .split("\n\n")
+              .map((paragraph, idx) => (
+                <p
+                  key={idx}
+                  className={`text-lg md:text-xl text-neutral-700 ${
+                    idx === 0 ? "mt-8" : "mt-6"
+                  }`}
+                >
+                  {paragraph}
+                </p>
+              ))}
+          </div>
+        </div>
       </section>
     </main>
   );

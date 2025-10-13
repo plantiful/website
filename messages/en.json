@@ -4,11 +4,67 @@
   },
   "hero": {
     "title": "Because we care\nabout plants.",
-    "subtitle": "Discover your inner self\nthrough growing."
+    "subtitle": "Discover your inner self\nthrough growing.",
+    "github_button": "See on GitHub",
+    "journey_button": "See our journey",
+    "video_alt": "Watch an example demo video",
+    "background_alt": "Botanical garden background"
   },
   "intro": {
     "title": "Introducing the Plantiful app.",
-    "subtitle": "Especially if you're struggling with plants."
+    "subtitle": "Especially if you're struggling with plants.",
+    "phones_alt": "Plantiful app screens on phones"
+  },
+  "acks": {
+    "title": "Acknowledgements",
+    "description": "We are deeply grateful to our mentors from RedHat Summer Camp, Kyndryl, JA Czech, Purkyňka High School and JIC, who gave us room to experiment, patiently shared their expertise and believed that Plantiful could genuinely help people. Their mentorship encouraged us to iterate faster, prototype new features and keep raising the bar for the experience we deliver.\n\nWe also want to thank the communities, partners, families and early users who shared feedback, tested imperfect builds and celebrated every milestone at our side. Your trust turns this journey into something bigger than a school project — it keeps us growing.",
+    "image_alt": "Plantiful team photo in a phone mockup",
+    "caption": "Plantiful team"
+  },
+  "timeline": {
+    "title": "Our Journey",
+    "foreword": {
+      "title": "RedHat Summer Camp",
+      "link": "https://research.redhat.com/red-hat-summer-camp/",
+      "description": "Plantiful was created at RedHat Summer Camp 2022, where we went through various workshops and then created the final project using everything we learned. Within a few hours, we clarified the idea, presentation, and pitch. The competition was strong, but we still managed to win."
+    },
+    "kyndryl_challenge": {
+      "title": "Kyndryl Challenge",
+      "description": "The victory at RedHat motivated us to continue with the idea and we entered the Kyndryl Challenge, where we succeeded and were offered an internship, and we started creating the app. We completed our project idea and added much more to it. Among our greatest strengths is certainly the close cooperation with small nurseries and subsequent integration in the app."
+    },
+    "kyndryl": {
+      "title": "Kyndryl Internship",
+      "description": "Today we deployed 5 new components on Aceternity"
+    },
+    "ja_expo": {
+      "title": "JA Expo",
+      "description": "JA expo"
+    },
+    "fekt_eeict": {
+      "title": "FEKT EEICT",
+      "description": "FEKT EEICT"
+    },
+    "release": {
+      "title": "Open-source Release",
+      "description": "Open-source Release"
+    }
+  },
+  "footer": {
+    "partners": {
+      "purkynka": "Purkynka",
+      "kyndryl": "Kyndryl",
+      "ja": "JA Czech",
+      "jic": "JIC"
+    },
+    "cta_title": "Let's grow together",
+    "cta_description": "Connect with us to learn more about Plantiful and how we're helping plant lovers care for their green companions.",
+    "contact_title": "Contact",
+    "instagram": "Instagram: plantiful.cz",
+    "email": "Email: info@plantiful.cz",
+    "copyright": "© 2025 Plantiful"
+  },
+  "common": {
+    "decorative_alt": "decorative cloud"
   },
   "metadata": {
     "title": "Plantiful - Because we care about plants",
