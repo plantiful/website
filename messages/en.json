@@ -18,8 +18,7 @@
   "acks": {
     "title": "Acknowledgements",
     "description": "We are deeply grateful to our mentors from RedHat Summer Camp, Kyndryl, JA Czech, Purkyňka High School and JIC, who gave us room to experiment, patiently shared their expertise and believed that Plantiful could genuinely help people. Their mentorship encouraged us to iterate faster, prototype new features and keep raising the bar for the experience we deliver.\n\nWe also want to thank the communities, partners, families and early users who shared feedback, tested imperfect builds and celebrated every milestone at our side. Your trust turns this journey into something bigger than a school project — it keeps us growing.",
-    "image_alt": "Plantiful team photo in a phone mockup",
-    "caption": "Plantiful team"
+    "image_alt": "Plantiful team photo in a phone mockup"
   },
   "timeline": {
     "title": "Our Journey",
@@ -54,7 +53,8 @@
       "purkynka": "Purkynka",
       "kyndryl": "Kyndryl",
       "ja": "JA Czech",
-      "jic": "JIC"
+      "jic": "JIC",
+      "plantid": "PlantID"
     },
     "cta_title": "Let's grow together",
     "cta_description": "Connect with us to learn more about Plantiful and how we're helping plant lovers care for their green companions.",

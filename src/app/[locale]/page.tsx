@@ -313,10 +313,9 @@ export default function Home() {
             width={1606}
             height={768}
             priority
-            className="w-full max-w-[920px] h-auto rounded-[32px] shadow-2xl"
+            className="w-full max-w-[920px] h-auto drop-shadow-2xl"
             sizes="(min-width: 1600px) 920px, (min-width: 1024px) 75vw, 100vw"
           />
-          <p className="text-xs text-neutral-500">{t("acks.caption")}</p>
 
           <div className="max-w-[820px] text-center">
             {t("acks.description")

@@ -18,8 +18,7 @@
   "acks": {
     "title": "Poděkování",
     "description": "Jsme nesmírně vděční mentorům z RedHat Summer Campu, společnosti Kyndryl, JA Czech, Střední škole Purkyňova a JICu, kteří nám dali prostor experimentovat, trpělivě sdíleli své zkušenosti a věřili, že Plantiful může skutečně pomáhat lidem. Jejich vedení nás motivovalo k rychlejším iteracím, odvážným prototypům a neustálému zvyšování laťky uživatelského zážitku.\n\nPoděkování patří také komunitám, partnerům, rodinám a prvním uživatelům, kteří nám poskytovali zpětnou vazbu, testovali nehotové verze a slavili s námi každou dosaženou metu. Vaše důvěra z této cesty dělá víc než jen školní projekt — pomáhá nám růst.",
-    "image_alt": "Fotografie týmu Plantiful v telefoním mockupu",
-    "caption": "Tým společnosti Plantiful"
+    "image_alt": "Fotografie týmu Plantiful v telefoním mockupu"
   },
   "timeline": {
     "title": "Naše cesta",
@@ -54,7 +53,8 @@
       "purkynka": "Purkynka",
       "kyndryl": "Kyndryl",
       "ja": "JA Czech",
-      "jic": "JIC"
+      "jic": "JIC",
+      "plantid": "PlantID"
     },
     "cta_title": "Pojďme růst společně",
     "cta_description": "Spojte se s námi a dozvíte se více o Plantiful a jak pomáháme milovníkům rostlin pečovat o jejich zelené společníky.",

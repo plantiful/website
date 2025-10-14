@@ -18,7 +18,6 @@ export const Timeline = ({ data, headerTitle }: TimelineProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
   const [potProgress, setPotProgress] = useState(0);
-  const [potOffset, setPotOffset] = useState(0);
 
   const heightTransform = useMotionValue(0);
   const opacityTransform = useMotionValue(0);
@@ -98,27 +97,6 @@ export const Timeline = ({ data, headerTitle }: TimelineProps) => {
     };
   }, [height, heightTransform, opacityTransform, rowRefs]);
 
-  useEffect(() => {
-    if (!ref.current) return;
-
-    const updateOffset = () => {
-      const containerEl = ref.current;
-      const firstRow = rowRefs[0]?.current;
-      if (!containerEl || !firstRow) return;
-
-      const containerTop = containerEl.getBoundingClientRect().top;
-      const firstTop = firstRow.getBoundingClientRect().top;
-      setPotOffset(Math.max(0, firstTop - containerTop));
-    };
-
-    updateOffset();
-    window.addEventListener("resize", updateOffset, { passive: true });
-
-    return () => {
-      window.removeEventListener("resize", updateOffset);
-    };
-  }, [rowRefs]);
-
   return (
     <div
       className="w-full bg-white dark:bg-neutral-950 font-sans md:px-10"
@@ -138,8 +116,7 @@ export const Timeline = ({ data, headerTitle }: TimelineProps) => {
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
         {/* Single sticky growing pot */}
         <div
-          className="sticky left-8 -translate-x-1/2 top-40 w-16 h-16 md:w-20 md:h-20 z-30 pointer-events-none"
-          style={{ marginTop: potOffset }}
+          className="sticky top-40 w-24 h-24 md:w-28 md:h-28 z-30 pointer-events-none -ml-6 md:-ml-20"
         >
           <StickyGrowingPot
             scrollProgress={potProgress}
@@ -156,7 +133,7 @@ export const Timeline = ({ data, headerTitle }: TimelineProps) => {
               key={index}
               ref={rowRef}
               className={`relative flex justify-start ${
-                isFirst ? "pt-2 md:pt-4" : "pt-10 md:pt-40"
+                isFirst ? "-mt-24 md:-mt-28" : "pt-10 md:pt-40"
               } md:gap-10`}
             >
               <div className="sticky flex flex-col md:flex-row z-40 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full">
@@ -174,21 +151,6 @@ export const Timeline = ({ data, headerTitle }: TimelineProps) => {
             </div>
           );
         })}
-        <div
-          style={{
-            height: height + "px",
-            marginTop: potOffset,
-          }}
-          className="absolute md:left-3 left-3 top-0 overflow-hidden w-[2px] bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-emerald-200 dark:via-emerald-800 to-transparent to-[99%]  [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)] "
-        >
-          <motion.div
-            style={{
-              height: heightTransform,
-              opacity: opacityTransform,
-            }}
-            className="absolute inset-x-0 top-0  w-[2px] bg-gradient-to-t from-emerald-700 via-emerald-500 to-transparent from-[0%] via-[10%] rounded-full"
-          />
-        </div>
       </div>
     </div>
   );

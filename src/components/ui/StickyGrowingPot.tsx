@@ -36,7 +36,7 @@ export function StickyGrowingPot({
 
         {/* Flower - animated scale, anchored at bottom center */}
         <motion.div
-          className="absolute left-1/2 bottom-[20%] w-[70%] h-[70%] -translate-x-1/2"
+          className="absolute left-1/2 bottom-[84%] w-[120%] h-[120%] -translate-x-1/2"
           style={{
             transformOrigin: "bottom center",
           }}

@@ -37,6 +37,13 @@ export default function Footer() {
             height={60}
             className="h-12 sm:h-14 md:h-16 w-auto object-contain"
           />
+          <Image
+            src="/plantid.png"
+            alt={t("footer.partners.plantid")}
+            width={200}
+            height={60}
+            className="h-12 sm:h-14 md:h-16 w-auto object-contain"
+          />
         </div>
         <div className="h-[2px] bg-black" />
       </div>
