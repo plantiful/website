@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <main className="relative w-full bg-white">
       {/* Hero section with background image only here */}
-      <section className="relative min-h-screen overflow-hidden">
+      <section className="relative z-20 min-h-screen overflow-hidden">
         {/* Background image */}
         <Image
           src="/bg.png"
@@ -137,14 +137,14 @@ export default function Home() {
       </section>
 
       {/* Introduction section */}
-      <section className="relative z-10 w-full bg-white min-h-screen flex items-center">
+      <section className="relative z-10 w-full bg-white min-h-screen flex items-center overflow-x-hidden">
         {/* scattered background artifacts */}
-        <div className="pointer-events-none select-none absolute -left-40 top-20 opacity-100">
+        <div className="pointer-events-none select-none absolute -left-1/4 -top-1/2 bottom-1/4 opacity-100 rotate-90">
           <Image
-            src="/bg_artifact.svg"
+            src="big_bg_artifact.svg"
             alt={t("common.decorative_alt")}
-            width={352}
-            height={194}
+            width={1024}
+            height={1024}
           />
         </div>
         <div className="pointer-events-none select-none absolute right-40 top-1/3 opacity-100">
@@ -172,7 +172,7 @@ export default function Home() {
           />
         </div>
 
-        <div className="mx-auto grid w-fit max-w-[1600px] grid-cols-1 items-center justify-center gap-0 md:gap-2 py-24 px-6 sm:px-10 md:px-16 lg:px-24 md:pl-24 lg:pl-54 md:grid-cols-[auto_auto]">
+        <div className="mx-auto grid w-full max-w-[1600px] grid-cols-1 items-center justify-center gap-0 md:gap-2 py-24 px-6 sm:px-10 md:px-16 lg:px-24 md:pl-24 lg:pl-54 md:grid-cols-[auto_auto]">
           <div className="max-w-[540px] md:pr-0 lg:pr-2">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.02] tracking-[-0.01em] text-neutral-900">
               {t("intro.title")}
@@ -188,7 +188,7 @@ export default function Home() {
               alt={t("intro.phones_alt")}
               width={800}
               height={600}
-              className="w-[620px] md:w-[820px] lg:w-[920px] xl:w-[1000px] h-auto drop-shadow-xl max-w-none"
+              className="w-full max-w-[620px] sm:max-w-[820px] md:max-w-[920px] lg:max-w-[1000px] h-auto drop-shadow-xl"
             />
           </div>
         </div>
@@ -197,7 +197,7 @@ export default function Home() {
       {/* Timeline section (Aceternity UI demo with artifacts handled inside) */}
       <section
         id="journey"
-        className="relative w-full bg-white dark:bg-neutral-950 overflow-clip"
+        className="relative z-10 w-full bg-white dark:bg-neutral-950"
       >
         {/* Timeline content */}
         <div className="relative">
@@ -207,72 +207,87 @@ export default function Home() {
           />
         </div>
 
-        {/* background artifacts - positioned above the timeline */}
-        <div
-          key="bg-artifact-1"
-          className="pointer-events-none select-none absolute -left-1/3 top-1/2 opacity-100 z-10"
-        >
-          <Image
-            src="/big_bg_artifact.svg"
-            alt={t("common.decorative_alt")}
-            width={1024}
-            height={1024}
-          />
-        </div>
-        <div
-          key="bg-artifact-2"
-          className="pointer-events-none select-none absolute -right-1/3 top-1/4 opacity-100 z-10"
-        >
-          <Image
-            src="/big_bg_artifact.svg"
-            alt={t("common.decorative_alt")}
-            width={1024}
-            height={1024}
-          />
-        </div>
-        <div
-          key="bg-artifact-3"
-          className="pointer-events-none select-none absolute right-10 top-1/4 opacity-100 z-10"
-        >
-          <Image
-            src="/bg_artifact.svg"
-            alt={t("common.decorative_alt")}
-            width={352}
-            height={194}
-          />
-        </div>
-        <div
-          key="bg-artifact-4"
-          className="pointer-events-none select-none absolute left-12 top-2/3 opacity-100 z-10"
-        >
-          <Image
-            src="/bg_artifact.svg"
-            alt={t("common.decorative_alt")}
-            width={352}
-            height={194}
-          />
-        </div>
-        <div
-          key="bg-artifact-5"
-          className="pointer-events-none select-none absolute right-1/3 top-1/2 opacity-100 z-10"
-        >
-          <Image
-            src="/bg_artifact.svg"
-            alt={t("common.decorative_alt")}
-            width={352}
-            height={194}
-          />
-        </div>
-        <div
-          key="bg-artifact-6"
-          className="pointer-events-none select-none absolute right-20 bottom-20 opacity-100 z-10"
-        >
-          <Image
-            src="/bg_artifact.svg"
-            alt={t("common.decorative_alt")}
-            width={352}
-            height={194}
-          />
+        {/* background artifacts - full-section overlay to avoid horizontal overflow */}
+        <div className="pointer-events-none absolute inset-0 overflow-x-hidden">
+          <div
+            key="bg-artifact-1"
+            className="pointer-events-none select-none absolute -left-1/3 top-1/2 opacity-100 z-0"
+          >
+            <Image
+              src="/big_bg_artifact.svg"
+              alt={t("common.decorative_alt")}
+              width={1024}
+              height={1024}
+            />
+          </div>
+          <div
+            key="bg-artifact-2"
+            className="pointer-events-none select-none absolute -right-1/3 top-1/4 opacity-100 z-0"
+          >
+            <Image
+              src="/big_bg_artifact.svg"
+              alt={t("common.decorative_alt")}
+              width={1024}
+              height={1024}
+            />
+          </div>
+
+          <div
+            key="bg-artifact-3"
+            className="pointer-events-none select-none absolute -right-1/3 -bottom-1/4 opacity-100 rotate-180 z-0"
+          >
+            <Image
+              src="/big_bg_artifact.svg"
+              alt={t("common.decorative_alt")}
+              width={1024}
+              height={1024}
+            />
+          </div>
+
+          <div
+            key="bg-artifact-4"
+            className="pointer-events-none select-none absolute right-10 top-1/4 opacity-100 z-0"
+          >
+            <Image
+              src="/bg_artifact.svg"
+              alt={t("common.decorative_alt")}
+              width={352}
+              height={194}
+            />
+          </div>
+          <div
+            key="bg-artifact-5"
+            className="pointer-events-none select-none absolute left-12 top-2/3 opacity-100 z-0"
+          >
+            <Image
+              src="/bg_artifact.svg"
+              alt={t("common.decorative_alt")}
+              width={352}
+              height={194}
+            />
+          </div>
+          <div
+            key="bg-artifact-6"
+            className="pointer-events-none select-none absolute right-1/3 top-1/2 opacity-100 z-0"
+          >
+            <Image
+              src="/bg_artifact.svg"
+              alt={t("common.decorative_alt")}
+              width={352}
+              height={194}
+            />
+          </div>
+          <div
+            key="bg-artifact-7"
+            className="pointer-events-none select-none absolute right-20 bottom-20 opacity-100 z-0"
+          >
+            <Image
+              src="/bg_artifact.svg"
+              alt={t("common.decorative_alt")}
+              width={352}
+              height={194}
+            />
+          </div>
         </div>
       </section>
 
@@ -282,20 +297,20 @@ export default function Home() {
         className="relative w-full bg-white overflow-hidden py-20"
       >
         {/* background accents */}
-        <div className="pointer-events-none select-none absolute -left-40 -top-10 opacity-100">
+        <div className="pointer-events-none select-none absolute -left-1/3 rotate-45 -top-10 opacity-100">
           <Image
             src="/big_bg_artifact.svg"
             alt={t("common.decorative_alt")}
-            width={520}
-            height={520}
+            width={1024}
+            height={1024}
           />
         </div>
         <div className="pointer-events-none select-none absolute -right-40 bottom-0 opacity-100">
           <Image
             src="/big_bg_artifact.svg"
             alt={t("common.decorative_alt")}
-            width={520}
-            height={520}
+            width={1024}
+            height={1024}
           />
         </div>
 

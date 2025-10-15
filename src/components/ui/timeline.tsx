@@ -1,6 +1,7 @@
 "use client";
 import { motion, useMotionValue } from "motion/react";
 import React, { createRef, useEffect, useMemo, useRef, useState } from "react";
+import Image from "next/image";
 import StickyGrowingPot from "@/components/ui/StickyGrowingPot";
 
 interface TimelineEntry {
@@ -115,9 +116,9 @@ export const Timeline = ({ data, headerTitle }: TimelineProps) => {
 
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
         {/* Single sticky growing pot */}
-        <div
-          className="sticky top-40 w-24 h-24 md:w-28 md:h-28 z-30 pointer-events-none -ml-6 md:-ml-20"
-        >
+         <div
+           className="sticky top-40 w-24 h-24 md:w-28 md:h-28 z-10 pointer-events-none -ml-6 md:-ml-20"
+         >
           <StickyGrowingPot
             scrollProgress={potProgress}
             className="w-full h-full"
@@ -127,6 +128,7 @@ export const Timeline = ({ data, headerTitle }: TimelineProps) => {
         {data.map((item, index) => {
           const rowRef = rowRefs[index];
           const isFirst = index === 0;
+          const isEven = index % 2 === 0;
 
           return (
             <div
@@ -136,10 +138,23 @@ export const Timeline = ({ data, headerTitle }: TimelineProps) => {
                 isFirst ? "-mt-24 md:-mt-28" : "pt-10 md:pt-40"
               } md:gap-10`}
             >
-              <div className="sticky flex flex-col md:flex-row z-40 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full">
-                <h3 className="hidden md:block text-xl md:pl-20 md:text-5xl font-bold text-neutral-500 dark:text-neutral-500 ">
-                  {item.title}
-                </h3>
+              <div className="sticky flex flex-col md:flex-row items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full">
+                <div className="relative flex items-center justify-center">
+                  {/* Background artifact behind milestone title */}
+                  <div className="pointer-events-none select-none absolute inset-0 flex items-center justify-center opacity-100">
+                    <Image
+                      src="/bg_artifact.svg"
+                      alt=""
+                      width={210}
+                      height={210}
+                    />
+                  </div>
+
+                  {/* Milestone title */}
+                  <h3 className="relative z-10 hidden md:block text-xl md:pl-20 md:text-5xl font-bold text-neutral-500 dark:text-neutral-500">
+                    {item.title}
+                  </h3>
+                </div>
               </div>
 
               <div className="relative pl-20 pr-4 md:pl-4 w-full">

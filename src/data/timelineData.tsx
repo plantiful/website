@@ -4,13 +4,15 @@ const imageWrapperClass =
   "relative w-full h-32 md:h-48 lg:h-64 overflow-hidden rounded-[24px] shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]";
 const imageSizes =
   "(min-width: 1600px) 400px, (min-width: 1280px) 360px, (min-width: 1024px) 45vw, (min-width: 768px) 48vw, 90vw";
+const descriptionClass =
+  "mb-8 text-sm md:text-base lg:text-lg leading-relaxed text-neutral-700 dark:text-neutral-300";
 
 export const getTimelineData = (t: (key: string) => string) => [
   {
     title: t("timeline.foreword.title"),
     content: (
       <div>
-        <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
+        <p className={descriptionClass}>
           {t("timeline.foreword.description")}
         </p>
         <div className="grid grid-cols-2 gap-4">
@@ -32,7 +34,7 @@ export const getTimelineData = (t: (key: string) => string) => [
     title: t("timeline.kyndryl_challenge.title"),
     content: (
       <div>
-        <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
+        <p className={descriptionClass}>
           {t("timeline.kyndryl_challenge.description")}
         </p>
         <div className="grid grid-cols-2 gap-4">
@@ -62,7 +64,7 @@ export const getTimelineData = (t: (key: string) => string) => [
     title: t("timeline.kyndryl.title"),
     content: (
       <div>
-        <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
+        <p className={descriptionClass}>
           {t("timeline.kyndryl.description")}
         </p>
         <div className="grid grid-cols-2 gap-4">
@@ -83,7 +85,7 @@ export const getTimelineData = (t: (key: string) => string) => [
     title: t("timeline.ja_expo.title"),
     content: (
       <div>
-        <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
+        <p className={descriptionClass}>
           {t("timeline.ja_expo.description")}
         </p>
         <div className="grid grid-cols-2 gap-4">
@@ -113,7 +115,7 @@ export const getTimelineData = (t: (key: string) => string) => [
     title: t("timeline.fekt_eeict.title"),
     content: (
       <div>
-        <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
+        <p className={descriptionClass}>
           {t("timeline.fekt_eeict.description")}
         </p>
         <div className="grid grid-cols-2 gap-4">
@@ -143,7 +145,7 @@ export const getTimelineData = (t: (key: string) => string) => [
     title: t("timeline.release.title"),
     content: (
       <div>
-        <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
+        <p className={descriptionClass}>
           {t("timeline.release.description")}
         </p>
         <div className="grid grid-cols-2 gap-4">
