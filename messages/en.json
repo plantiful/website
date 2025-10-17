@@ -6,7 +6,7 @@
     "title": "Because we care\nabout plants.",
     "subtitle": "Discover your inner self\nthrough growing.",
     "github_button": "See on GitHub",
-    "journey_button": "See our journey",
+    "journey_button": "Our journey",
     "video_alt": "Watch an example demo video",
     "background_alt": "Botanical garden background"
   },
@@ -22,30 +22,142 @@
   },
   "timeline": {
     "title": "Our Journey",
+    "gallery": {
+      "summercamp": "Plantiful team celebrating at Red Hat Summer Camp 2022",
+      "kyndryl_challenge_stage": "Plantiful pitching on stage at the Kyndryl Challenge finals",
+      "kyndryl_challenge_pitch": "Mentors reviewing the Plantiful prototype during the Kyndryl Challenge",
+      "kyndryl_product": "Screens from the Plantiful beta built during the Kyndryl internship",
+      "ja_expo_booth": "Plantiful booth attracting visitors at JA Expo",
+      "ja_expo_team": "Plantiful team holding awards at JA Expo",
+      "fekt_stage": "Presenting our research at the FEKT EEICT conference",
+      "fekt_award": "Receiving recognition at the FEKT EEICT awards ceremony",
+      "release_preview": "Preview of the open-source Plantiful interface"
+    },
     "foreword": {
       "title": "RedHat Summer Camp",
-      "link": "https://research.redhat.com/red-hat-summer-camp/",
-      "description": "Plantiful was created at RedHat Summer Camp 2022, where we went through various workshops and then created the final project using everything we learned. Within a few hours, we clarified the idea, presentation, and pitch. The competition was strong, but we still managed to win."
+      "description": "Plantiful was created during Red Hat Summer Camp 2022 where a week of product workshops pushed us to validate the idea, prototype the first flows and pitch in front of mentors.\n\nWithin a few hours we refined the story, the presentation and the first interface. The competition was strong, but we still took the win that convinced us the project had a future.",
+      "highlights": [
+        "Formed the Plantiful founding team and validated the concept in 48 hours.",
+        "Won the Red Hat Summer Camp finale and secured ongoing mentorship."
+      ],
+      "links": [
+        {
+          "label": "Red Hat Summer Camp 2022 recap",
+          "description": "Official summary of the program featuring the winning teams.",
+          "href": "https://research.redhat.com/blog/2022/10/26/open-source-values-are-the-focus-of-red-hat-summer-camp-in-brno/",
+          "type": "article"
+        }
+      ]
     },
     "kyndryl_challenge": {
       "title": "Kyndryl Challenge",
-      "description": "The victory at RedHat motivated us to continue with the idea and we entered the Kyndryl Challenge, where we succeeded and were offered an internship, and we started creating the app. We completed our project idea and added much more to it. Among our greatest strengths is certainly the close cooperation with small nurseries and subsequent integration in the app."
+      "description": "The momentum from Red Hat carried us to the nationwide Kyndryl Challenge. Together with product mentors we turned the pitch deck into a roadmap, tested ideas with small nurseries and delivered our first working MVP.\n\nWinning the challenge unlocked an internship where we could keep building Plantiful with professionals.",
+      "highlights": [
+        "Built the first cross-platform MVP with Kyndryl mentors.",
+        "Won the challenge and earned an internship to continue development."
+      ],
+      "links": [
+        {
+          "label": "Kyndryl Challenge recap",
+          "description": "Blog recap of the national innovation contest.",
+          "href": "https://www.purkynka.cz/aktualne/finale-5-rocniku-souteze-kyndryl-challenge/",
+          "type": "article"
+        },
+        {
+          "label": "Behind the scenes with Kyndryl",
+          "description": "Interview about building Plantiful during the mentorship program.",
+          "href": "https://example.com/press/plantiful-kyndryl-interview",
+          "type": "press"
+        }
+      ]
     },
     "kyndryl": {
       "title": "Kyndryl Internship",
-      "description": "Today we deployed 5 new components on Aceternity"
+      "description": "During the Kyndryl internship we rebuilt the prototype with production tooling, automated plant care suggestions and designed integrations for partner nurseries.\n\nThe experience taught us how to run continuous discovery while shipping a polished mobile experience.",
+      "highlights": [
+        "Automated care plans for 150+ plants with real nursery data.",
+        "Shipped cloud architecture that scales to partner greenhouses."
+      ],
+      "links": [
+        {
+          "label": "Internship case study",
+          "description": "Deep dive into how we scaled Plantiful with Kyndryl engineers.",
+          "href": "https://example.com/case-study/plantiful-kyndryl-internship",
+          "type": "article"
+        },
+        {
+          "label": "Prototype demo",
+          "description": "Video walkthrough of the beta produced during the internship.",
+          "href": "https://example.com/videos/plantiful-kyndryl-demo",
+          "type": "video"
+        }
+      ]
     },
     "ja_expo": {
       "title": "JA Expo",
-      "description": "JA expo"
+      "description": "We brought Plantiful to JA Expo to test it with thousands of visitors and collect feedback on physical prototypes.\n\nPresenting on stage helped us refine our story, and the fair introduced new partners who joined the pilot.",
+      "highlights": [
+        "Gathered feedback from 2,000+ visitors during live demos.",
+        "Signed new beta testers and marketplace partners on-site."
+      ],
+      "links": [
+        {
+          "label": "JA Expo story",
+          "description": "Article capturing our booth experience and live demos.",
+          "href": "https://www.purkynka.cz/aktualne/dostali-jsme-se-do-top-desitky-ja-studentskych-firem-letosniho-roku/",
+          "type": "article"
+        },
+        {
+          "label": "Photo gallery",
+          "description": "Highlights from the Plantiful stand throughout the expo.",
+          "href": "https://example.com/gallery/plantiful-ja-expo",
+          "type": "resource"
+        }
+      ]
     },
     "fekt_eeict": {
       "title": "FEKT EEICT",
-      "description": "FEKT EEICT"
+      "description": "We documented our learnings in a research paper for the FEKT EEICT conference where we presented the data we gathered from early pilots.\n\nThe committee awarded our work and encouraged us to keep bridging academic insight with product development.",
+      "highlights": [
+        "Published our methodology and findings in a peer-reviewed paper.",
+        "Received the FEKT EEICT award for applied research."
+      ],
+      "links": [
+        {
+          "label": "Plantiful EEICT research paper",
+          "description": "Download the full paper covering our methodology and results.",
+          "href": "https://www.purkynka.cz/aktualne/studentska-appka-pro-zapalene-botaniky/",
+          "type": "research"
+        },
+        {
+          "label": "Research paper (PDF)",
+          "description": "Download the full Plantiful EEICT paper as submitted to the conference.",
+          "href": "/Plantiful.pdf",
+          "type": "research"
+        }
+      ]
     },
     "release": {
       "title": "Open-source Release",
-      "description": "Open-source Release"
+      "description": "We finally open-sourced the Plantiful experience so others can build plant care experiments faster.\n\nThe release bundles the mobile app, knowledge base and design system we matured along the journey.",
+      "highlights": [
+        "Open-sourced the Plantiful codebase and design system.",
+        "Documented contributor workflows and the first public roadmap."
+      ],
+      "links": [
+        {
+          "label": "Plantiful app repository",
+          "description": "Explore the Expo-based mobile app that powers Plantiful.",
+          "href": "https://github.com/plantiful/app",
+          "type": "resource"
+        },
+        {
+          "label": "Plantiful website repository",
+          "description": "Dig into the marketing site and timeline source code.",
+          "href": "https://github.com/plantiful/website",
+          "type": "resource"
+        }
+      ]
     }
   },
   "footer": {
@@ -56,7 +168,7 @@
       "jic": "JIC",
       "plantid": "PlantID"
     },
-    "cta_title": "Let's grow together",
+    "cta_title": "Plantiful",
     "cta_description": "Connect with us to learn more about Plantiful and how we're helping plant lovers care for their green companions.",
     "contact_title": "Contact",
     "instagram": "Instagram: plantiful.cz",

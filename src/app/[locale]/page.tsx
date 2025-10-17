@@ -2,15 +2,139 @@
 
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import {
+  useCallback,
+  useState,
+  type CSSProperties,
+  type MouseEventHandler,
+} from "react";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { Timeline } from "@/components/ui/timeline";
 import { HeroVideoDialog } from "@/components/ui/hero-video-dialog";
 import { getTimelineData } from "@/data/timelineData";
+import { cn } from "@/lib/utils";
+import type Lenis from "lenis";
+
+type BackgroundArtifactProps = {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  className?: string;
+  style: CSSProperties;
+  priority?: boolean;
+};
+
+type LenisWindow = Window & { lenis?: Lenis };
+
+function BackgroundArtifact({
+  src,
+  alt,
+  width,
+  height,
+  className,
+  style,
+  priority = false,
+}: BackgroundArtifactProps) {
+  return (
+    <div
+      className={cn(
+        "pointer-events-none select-none absolute will-change-transform",
+        className,
+      )}
+      style={style}
+    >
+      <Image
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        priority={priority}
+      />
+    </div>
+  );
+}
 
 export default function Home() {
   const t = useTranslations();
   const [isVideoOpen, setIsVideoOpen] = useState(false);
+  const handleJourneyClick = useCallback<MouseEventHandler<HTMLAnchorElement>>((event) => {
+    if (
+      event.defaultPrevented ||
+      event.button !== 0 ||
+      event.metaKey ||
+      event.ctrlKey ||
+      event.shiftKey ||
+      event.altKey
+    ) {
+      return;
+    }
+
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    const targetSelector = "#journey";
+    const lenis = (window as LenisWindow).lenis;
+
+    if (!lenis) {
+      return;
+    }
+
+    event.preventDefault();
+    lenis.scrollTo(targetSelector, {
+      duration: 1.1,
+      lock: true,
+      onComplete: () => {
+        window.history.replaceState(null, "", targetSelector);
+      },
+    });
+  }, []);
+  const CTAButtons = (
+    <>
+      <a
+        href="https://github.com/plantiful/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex flex-1 items-center justify-center gap-3 px-4 py-2.5 text-sm md:flex-none md:px-6 md:py-3 md:text-base bg-black hover:bg-neutral-900 text-white font-semibold rounded-lg transition-colors shadow-lg"
+      >
+        <svg
+          className="w-5 h-5"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            fillRule="evenodd"
+            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+            clipRule="evenodd"
+          />
+        </svg>
+        {t("hero.github_button")}
+      </a>
+
+      <a
+        href="#journey"
+        onClick={handleJourneyClick}
+        className="inline-flex flex-1 items-center justify-center gap-3 px-4 py-2.5 text-sm md:flex-none md:px-6 md:py-3 md:text-base bg-[#184D44] hover:bg-[#143d36] text-white font-semibold rounded-lg transition-colors shadow-lg"
+      >
+        {t("hero.journey_button")}
+        <svg
+          className="w-4 h-4"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M19 9l-7 7-7-7"
+          />
+        </svg>
+      </a>
+    </>
+  );
 
   return (
     <main className="relative w-full bg-white">
@@ -22,7 +146,7 @@ export default function Home() {
           alt={t("hero.background_alt")}
           fill
           priority
-          className=""
+          className="object-cover object-center"
           sizes="100vw"
         />
 
@@ -31,7 +155,7 @@ export default function Home() {
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              "linear-gradient(to right, rgba(6, 78, 59, 0.7) 0%, rgba(6, 78, 59, 0.55) 35%, transparent 60%)",
+              "linear-gradient(90deg, rgba(6, 78, 59, 0.78) 0%, rgba(6, 78, 59, 0.68) 40%, rgba(6, 78, 59, 0.5) 70%, rgba(6, 78, 59, 0.2) 100%)",
           }}
         />
 
@@ -55,8 +179,8 @@ export default function Home() {
 
         {/* Hero copy */}
         <div className="relative z-10 flex min-h-screen items-center">
-          <div className="mx-auto grid w-full max-w-[1600px] grid-cols-1 items-center gap-8 px-6 sm:px-10 md:grid-cols-[1fr_auto] md:px-16 lg:px-24">
-            <div className="max-w-[820px]">
+          <div className="mx-auto grid w-full max-w-[1600px] grid-cols-1 items-start gap-8 px-6 sm:px-10 md:grid-cols-[1fr_auto] md:items-center md:px-16 lg:px-24">
+            <div className="order-1 mx-auto w-full max-w-none text-center md:order-1 md:mx-0 md:max-w-[820px] md:text-left">
               <h1 className="text-white font-bold leading-[1.05] text-4xl md:text-5xl lg:text-6xl">
                 {t("hero.title")
                   .split("\n")
@@ -67,7 +191,7 @@ export default function Home() {
                     </span>
                   ))}
               </h1>
-              <p className="mt-6 text-white/85 text-xl md:text-2xl">
+              <p className="mt-6 text-white/95 text-xl md:text-2xl">
                 {t("hero.subtitle")
                   .split("\n")
                   .map((line, i) => (
@@ -78,59 +202,21 @@ export default function Home() {
                   ))}
               </p>
 
-              <div className="mt-8 flex flex-wrap gap-4">
-                <a
-                  href="https://github.com/plantiful/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 px-6 py-3 bg-black hover:bg-neutral-900 text-white font-semibold rounded-lg transition-colors shadow-lg"
-                >
-                  <svg
-                    className="w-5 h-5"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  {t("hero.github_button")}
-                </a>
-
-                <a
-                  href="#journey"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#184D44] hover:bg-[#143d36] text-white font-semibold rounded-lg transition-colors shadow-lg"
-                >
-                  {t("hero.journey_button")}
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </a>
-              </div>
+              <div className="mt-8 hidden flex-wrap gap-4 md:flex">{CTAButtons}</div>
             </div>
-            <div className="justify-self-start md:justify-self-end">
+            <div className="order-2 flex w-full justify-center md:order-2 md:justify-end">
               <HeroVideoDialog
                 animationStyle="from-center"
                 videoSrc="https://www.youtube.com/embed/zZ-SUUvdznc?autoplay=1&rel=0"
                 thumbnailSrc="https://img.youtube.com/vi/zZ-SUUvdznc/maxresdefault.jpg"
                 thumbnailAlt={t("hero.video_alt")}
-                className="w-[360px] sm:w-[480px] md:w-[600px] lg:w-[720px]"
+                className="w-full max-w-[360px] sm:max-w-[480px] md:max-w-[600px] lg:max-w-[720px]"
                 isOpen={isVideoOpen}
                 onOpenChange={setIsVideoOpen}
               />
+            </div>
+            <div className="order-3 mt-4 flex w-full flex-nowrap items-center justify-center gap-3 md:hidden">
+              {CTAButtons}
             </div>
           </div>
         </div>
@@ -139,38 +225,42 @@ export default function Home() {
       {/* Introduction section */}
       <section className="relative z-10 w-full bg-white min-h-screen flex items-center overflow-x-hidden">
         {/* scattered background artifacts */}
-        <div className="pointer-events-none select-none absolute -left-1/4 -top-1/2 bottom-1/4 opacity-100 rotate-90">
-          <Image
-            src="big_bg_artifact.svg"
-            alt={t("common.decorative_alt")}
-            width={1024}
-            height={1024}
-          />
-        </div>
-        <div className="pointer-events-none select-none absolute right-40 top-1/3 opacity-100">
-          <Image
-            src="/bg_artifact.svg"
-            alt={t("common.decorative_alt")}
-            width={352}
-            height={194}
-          />
-        </div>
-        <div className="pointer-events-none select-none absolute left-1/3 -top-40 opacity-100">
-          <Image
-            src="/bg_artifact.svg"
-            alt={t("common.decorative_alt")}
-            width={352}
-            height={194}
-          />
-        </div>
-        <div className="pointer-events-none select-none absolute left-1/4 -bottom-1/3 opacity-100">
-          <Image
-            src="/bg_artifact.svg"
-            alt={t("common.decorative_alt")}
-            width={352}
-            height={194}
-          />
-        </div>
+        <BackgroundArtifact
+          src="/big_bg_artifact.svg"
+          alt={t("common.decorative_alt")}
+          width={1024}
+          height={1024}
+          className="rotate-90 opacity-100"
+          style={{
+            left: "clamp(-32rem, -26vw, -18rem)",
+            top: "clamp(-30rem, -28vh, -16rem)",
+            width: "min(70vw, 42rem)",
+          }}
+        />
+        <BackgroundArtifact
+          src="/big_bg_artifact.svg"
+          alt={t("common.decorative_alt")}
+          width={1024}
+          height={1024}
+          className="opacity-100"
+          style={{
+            top: "clamp(8rem, 24vh, 20rem)",
+            right: "clamp(-20rem, -10vw, -6rem)",
+            width: "min(66vw, 38rem)",
+          }}
+        />
+        <BackgroundArtifact
+          src="/bg_artifact.svg"
+          alt={t("common.decorative_alt")}
+          width={352}
+          height={194}
+          className="opacity-100"
+          style={{
+            top: "clamp(-10rem, -6vh, -2rem)",
+            left: "clamp(6rem, 18vw, 26rem)",
+            width: "min(32vw, 18rem)",
+          }}
+        />
 
         <div className="mx-auto grid w-full max-w-[1600px] grid-cols-1 items-center justify-center gap-0 md:gap-2 py-24 px-6 sm:px-10 md:px-16 lg:px-24 md:pl-24 lg:pl-54 md:grid-cols-[auto_auto]">
           <div className="max-w-[540px] md:pr-0 lg:pr-2">
@@ -209,85 +299,99 @@ export default function Home() {
 
         {/* background artifacts - full-section overlay to avoid horizontal overflow */}
         <div className="pointer-events-none absolute inset-0 overflow-x-hidden">
-          <div
+          <BackgroundArtifact
             key="bg-artifact-1"
-            className="pointer-events-none select-none absolute -left-1/3 top-1/2 opacity-100 z-0"
-          >
-            <Image
-              src="/big_bg_artifact.svg"
-              alt={t("common.decorative_alt")}
-              width={1024}
-              height={1024}
-            />
-          </div>
-          <div
+            src="/big_bg_artifact.svg"
+            alt={t("common.decorative_alt")}
+            width={1024}
+            height={1024}
+            className="z-0 -translate-y-1/2"
+            style={{
+              left: "clamp(-30rem, -22vw, -16rem)",
+              top: "50%",
+              width: "min(74vw, 44rem)",
+            }}
+          />
+          <BackgroundArtifact
             key="bg-artifact-2"
-            className="pointer-events-none select-none absolute -right-1/3 top-1/4 opacity-100 z-0"
-          >
-            <Image
-              src="/big_bg_artifact.svg"
-              alt={t("common.decorative_alt")}
-              width={1024}
-              height={1024}
-            />
-          </div>
+            src="/big_bg_artifact.svg"
+            alt={t("common.decorative_alt")}
+            width={1024}
+            height={1024}
+            className="z-0"
+            style={{
+              top: "clamp(6rem, 22vh, 20rem)",
+              right: "clamp(-24rem, -16vw, -10rem)",
+              width: "min(70vw, 42rem)",
+            }}
+          />
 
-          <div
+          <BackgroundArtifact
             key="bg-artifact-3"
-            className="pointer-events-none select-none absolute -right-1/3 -bottom-1/4 opacity-100 rotate-180 z-0"
-          >
-            <Image
-              src="/big_bg_artifact.svg"
-              alt={t("common.decorative_alt")}
-              width={1024}
-              height={1024}
-            />
-          </div>
+            src="/big_bg_artifact.svg"
+            alt={t("common.decorative_alt")}
+            width={1024}
+            height={1024}
+            className="z-0 rotate-180"
+            style={{
+              bottom: "clamp(-16rem, -12vh, -4rem)",
+              right: "clamp(-26rem, -18vw, -12rem)",
+              width: "min(72vw, 42rem)",
+            }}
+          />
 
-          <div
+          <BackgroundArtifact
             key="bg-artifact-4"
-            className="pointer-events-none select-none absolute right-10 top-1/4 opacity-100 z-0"
-          >
-            <Image
-              src="/bg_artifact.svg"
-              alt={t("common.decorative_alt")}
-              width={352}
-              height={194}
-            />
-          </div>
-          <div
+            src="/bg_artifact.svg"
+            alt={t("common.decorative_alt")}
+            width={352}
+            height={194}
+            className="z-0"
+            style={{
+              top: "clamp(8rem, 26vh, 20rem)",
+              right: "clamp(2rem, 10vw, 12rem)",
+              width: "min(30vw, 18rem)",
+            }}
+          />
+          <BackgroundArtifact
             key="bg-artifact-5"
-            className="pointer-events-none select-none absolute left-12 top-2/3 opacity-100 z-0"
-          >
-            <Image
-              src="/bg_artifact.svg"
-              alt={t("common.decorative_alt")}
-              width={352}
-              height={194}
-            />
-          </div>
-          <div
+            src="/bg_artifact.svg"
+            alt={t("common.decorative_alt")}
+            width={352}
+            height={194}
+            className="z-0"
+            style={{
+              top: "clamp(20rem, 62vh, 34rem)",
+              left: "clamp(1rem, 12vw, 14rem)",
+              width: "min(30vw, 18rem)",
+            }}
+          />
+          <BackgroundArtifact
             key="bg-artifact-6"
-            className="pointer-events-none select-none absolute right-1/3 top-1/2 opacity-100 z-0"
-          >
-            <Image
-              src="/bg_artifact.svg"
-              alt={t("common.decorative_alt")}
-              width={352}
-              height={194}
-            />
-          </div>
-          <div
+            src="/bg_artifact.svg"
+            alt={t("common.decorative_alt")}
+            width={352}
+            height={194}
+            className="z-0 -translate-y-1/2"
+            style={{
+              top: "50%",
+              right: "clamp(-10rem, 0vw, 10rem)",
+              width: "min(28vw, 16rem)",
+            }}
+          />
+          <BackgroundArtifact
             key="bg-artifact-7"
-            className="pointer-events-none select-none absolute right-20 bottom-20 opacity-100 z-0"
-          >
-            <Image
-              src="/bg_artifact.svg"
-              alt={t("common.decorative_alt")}
-              width={352}
-              height={194}
-            />
-          </div>
+            src="/bg_artifact.svg"
+            alt={t("common.decorative_alt")}
+            width={352}
+            height={194}
+            className="z-0"
+            style={{
+              bottom: "clamp(1rem, 10vh, 6rem)",
+              right: "clamp(1rem, 6vw, 5rem)",
+              width: "min(26vw, 15rem)",
+            }}
+          />
         </div>
       </section>
 
@@ -297,22 +401,30 @@ export default function Home() {
         className="relative w-full bg-white overflow-hidden py-20"
       >
         {/* background accents */}
-        <div className="pointer-events-none select-none absolute -left-1/3 rotate-45 -top-10 opacity-100">
-          <Image
-            src="/big_bg_artifact.svg"
-            alt={t("common.decorative_alt")}
-            width={1024}
-            height={1024}
-          />
-        </div>
-        <div className="pointer-events-none select-none absolute -right-40 bottom-0 opacity-100">
-          <Image
-            src="/big_bg_artifact.svg"
-            alt={t("common.decorative_alt")}
-            width={1024}
-            height={1024}
-          />
-        </div>
+        <BackgroundArtifact
+          src="/big_bg_artifact.svg"
+          alt={t("common.decorative_alt")}
+          width={1024}
+          height={1024}
+          className="rotate-45 opacity-100"
+          style={{
+            left: "clamp(-28rem, -20vw, -12rem)",
+            top: "clamp(-12rem, -8vh, -4rem)",
+            width: "min(74vw, 44rem)",
+          }}
+        />
+        <BackgroundArtifact
+          src="/big_bg_artifact.svg"
+          alt={t("common.decorative_alt")}
+          width={1024}
+          height={1024}
+          className="opacity-100"
+          style={{
+            right: "clamp(-20rem, -12vw, -4rem)",
+            bottom: "clamp(-8rem, -6vh, -1rem)",
+            width: "min(72vw, 42rem)",
+          }}
+        />
 
         <div className="relative mx-auto flex w-full max-w-[1400px] flex-col items-center gap-10 px-6 sm:px-10 md:px-16 lg:px-24">
           <div className="text-center max-w-4xl">

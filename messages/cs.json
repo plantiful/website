@@ -3,9 +3,9 @@
     "logo_alt": "Plantiful"
   },
   "hero": {
-    "title": "Protože na rostlinách\nnám záleží.",
+    "title": "Protože nám na\nrostlinách záleží.",
     "subtitle": "Objev svoje vnitřní já\nv pěstování.",
-    "github_button": "Zobrazit na GitHubu",
+    "github_button": "Repozitář",
     "journey_button": "Náš příběh",
     "video_alt": "Sleduj ukázkové video",
     "background_alt": "Pozadí botanické zahrady"
@@ -22,30 +22,142 @@
   },
   "timeline": {
     "title": "Naše cesta",
+    "gallery": {
+      "summercamp": "Tým Plantiful slaví vítězství na Red Hat Summer Camp 2022",
+      "kyndryl_challenge_stage": "Plantiful prezentuje na finále Kyndryl Challenge",
+      "kyndryl_challenge_pitch": "Mentorům ukazujeme prototyp Plantiful během Kyndryl Challenge",
+      "kyndryl_product": "Obrazovky bety Plantiful vytvořené během stáže v Kyndrylu",
+      "ja_expo_booth": "Stánek Plantiful na veletrhu JA Expo",
+      "ja_expo_team": "Tým Plantiful s oceněními na JA Expo",
+      "fekt_stage": "Prezentace výzkumu Plantiful na konferenci FEKT EEICT",
+      "fekt_award": "Přebírání ocenění na FEKT EEICT",
+      "release_preview": "Náhled open-source rozhraní Plantiful"
+    },
     "foreword": {
       "title": "RedHat Summer Camp",
-      "link": "https://research.redhat.com/red-hat-summer-camp/",
-      "description": "Plantiful vzniklo na RedHat Summer Campu 2022, kde jsme prošli různými workshopy a následně vytvářeli finální projekt za pomocí všeho, co jsme se naučili. V průběhu pár hodin jsme si ujasnili nápad, prezentaci a řeč. Konkurence byla silná, ale i tak se nám podařilo vyhrát."
+      "description": "Plantiful vzniklo během Red Hat Summer Campu 2022, kde nás týden produktových workshopů donutil ověřit problém, navrhnout první flow a obhájit projekt před mentory.\n\nBěhem pár hodin jsme vyladili příběh, prezentaci i první rozhraní. Konkurence byla silná, ale i tak jsme zvítězili a uvěřili, že má projekt budoucnost.",
+      "highlights": [
+        "Sestavili jsme zakládající tým Plantiful a během 48 hodin ověřili koncept.",
+        "Vyhráli jsme finále Red Hat Summer Campu a získali další mentoring."
+      ],
+      "links": [
+        {
+          "label": "Red Hat Summer Camp 2022 – shrnutí",
+          "description": "Oficiální souhrn programu s vítěznými projekty.",
+          "href": "https://research.redhat.com/blog/2022/10/26/open-source-values-are-the-focus-of-red-hat-summer-camp-in-brno/",
+          "type": "article"
+        }
+      ]
     },
     "kyndryl_challenge": {
       "title": "Kyndryl Challenge",
-      "description": "Výhra v RedHatu nás namotivovala v nápadu pokračovat dál a přihlásili jsme se do Kyndryl Challenge, kde jsme uspěli a byli nám tudíž nabídnuta stáž a začali jsme vytvářet aplikaci. Zkompletovali jsme náš projektový nápad a ještě k němu mnohé přidali. Mezi naše největší přednosti určitě patří úzká spolupráce s malými zahrádkářstvími a následná integrace v aplikaci."
+      "description": "Na vítězství z Red Hatu navázala celostátní soutěž Kyndryl Challenge. S produktovými mentory jsme z prezentace udělali roadmapu, testovali nápady s malými zahradnictvími a dodali první funkční MVP.\n\nVýhra nám otevřela stáž, během které jsme mohli Plantiful stavět dál po boku profesionálů.",
+      "highlights": [
+        "Postavili jsme první multiplatformní MVP s mentory z Kyndrylu.",
+        "V soutěži jsme zvítězili a získali nabídku stáže."
+      ],
+      "links": [
+        {
+          "label": "Shrnutí Kyndryl Challenge",
+          "description": "Blogový recap národní inovační soutěže.",
+          "href": "https://www.purkynka.cz/aktualne/finale-5-rocniku-souteze-kyndryl-challenge/",
+          "type": "article"
+        },
+        {
+          "label": "Zákulisí s Kyndrylem",
+          "description": "Rozhovor o budování Plantiful během mentorského programu.",
+          "href": "https://example.com/press/plantiful-kyndryl-interview",
+          "type": "press"
+        }
+      ]
     },
     "kyndryl": {
-      "title": "Kyndryl Internship",
-      "description": "Dnes jsme nasadili 5 nových komponent na Aceternity"
+      "title": "Stáž v Kyndrylu",
+      "description": "Během stáže v Kyndrylu jsme prototyp přepsali do produkčních nástrojů, automatizovali doporučení péče a navrhli integrace pro partnerská zahradnictví.\n\nZískali jsme zkušenost, jak kombinovat průběžný výzkum s pravidelným releasem vyladěné mobilní aplikace.",
+      "highlights": [
+        "Automatizovali jsme plány péče pro 150+ rostlin z reálných dat zahradnictví.",
+        "Navrhli jsme cloudovou architekturu, která škáluje k partnerským skleníkům."
+      ],
+      "links": [
+        {
+          "label": "Case study ze stáže",
+          "description": "Detailní pohled na škálování Plantiful s inženýry Kyndrylu.",
+          "href": "https://example.com/case-study/plantiful-kyndryl-internship",
+          "type": "article"
+        },
+        {
+          "label": "Ukázka prototypu",
+          "description": "Video průvodce betou vytvořenou během stáže.",
+          "href": "https://example.com/videos/plantiful-kyndryl-demo",
+          "type": "video"
+        }
+      ]
     },
     "ja_expo": {
       "title": "JA Expo",
-      "description": "JA expo"
+      "description": "Plantiful jsme přivezli na JA Expo, abychom aplikaci otestovali s tisíci návštěvníky a získali zpětnou vazbu na fyzické prototypy.\n\nPrezentace na pódiu nám pomohla vyladit příběh a veletrh přivedl nové partnery do pilotu.",
+      "highlights": [
+        "Získali jsme zpětnou vazbu od více než 2 000 návštěvníků během živých ukázek.",
+        "Přímo na místě jsme domluvili nové beta testery i marketplace partnery."
+      ],
+      "links": [
+        {
+          "label": "Příběh z JA Expo",
+          "description": "Článek zachycující náš stánek a živé ukázky.",
+          "href": "https://www.purkynka.cz/aktualne/dostali-jsme-se-do-top-desitky-ja-studentskych-firem-letosniho-roku/",
+          "type": "article"
+        },
+        {
+          "label": "Fotogalerie",
+          "description": "Nejlepší momenty ze stánku Plantiful během veletrhu.",
+          "href": "https://example.com/gallery/plantiful-ja-expo",
+          "type": "resource"
+        }
+      ]
     },
     "fekt_eeict": {
       "title": "FEKT EEICT",
-      "description": "FEKT EEICT"
+      "description": "Na konferenci FEKT EEICT jsme prezentovali výzkumnou práci shrnující data z prvních pilotů Plantiful a to, jak jsme je promítli do produktu.\n\nPorota naši práci ocenila a povzbudila nás, abychom dál propojovali akademické poznatky s vývojem produktu.",
+      "highlights": [
+        "Zveřejnili jsme metodiku i výsledky v recenzované práci.",
+        "Získali jsme ocenění FEKT EEICT za aplikovaný výzkum."
+      ],
+      "links": [
+        {
+          "label": "Výzkumná práce Plantiful pro EEICT",
+          "description": "Stáhni si kompletní paper s metodikou a výsledky.",
+          "href": "https://www.purkynka.cz/aktualne/studentska-appka-pro-zapalene-botaniky/",
+          "type": "research"
+        },
+        {
+          "label": "Výzkumná práce (PDF)",
+          "description": "Stáhni si kompletní paper Plantiful pro konferenci EEICT.",
+          "href": "/Plantiful.pdf",
+          "type": "research"
+        }
+      ]
     },
     "release": {
-      "title": "Open-source Release",
-      "description": "Open-source Release"
+      "title": "Open-source vydání",
+      "description": "Plantiful jsme uvolnili jako open-source, aby mohli další nadšenci rychleji stavět vlastní experimenty s péčí o rostliny.\n\nSoučástí releasu je mobilní aplikace, znalostní báze i design systém, který jsme na cestě vyladili.",
+      "highlights": [
+        "Open-sourceovali jsme kód i design systém Plantiful.",
+        "Zdokumentovali jsme proces pro přispěvatele a první veřejný roadmap Plantiful."
+      ],
+      "links": [
+        {
+          "label": "Repozitář aplikace Plantiful",
+          "description": "Prozkoumej Expo aplikaci, která pohání Plantiful.",
+          "href": "https://github.com/plantiful/app",
+          "type": "resource"
+        },
+        {
+          "label": "Repozitář webu Plantiful",
+          "description": "Podívej se na zdrojový kód webu i časové osy.",
+          "href": "https://github.com/plantiful/website",
+          "type": "resource"
+        }
+      ]
     }
   },
   "footer": {
@@ -56,7 +168,7 @@
       "jic": "JIC",
       "plantid": "PlantID"
     },
-    "cta_title": "Pojďme růst společně",
+    "cta_title": "Plantiful",
     "cta_description": "Spojte se s námi a dozvíte se více o Plantiful a jak pomáháme milovníkům rostlin pečovat o jejich zelené společníky.",
     "contact_title": "Kontakt",
     "instagram": "Instagram: plantiful.cz",
@@ -67,7 +179,7 @@
     "decorative_alt": "dekorativní mrak"
   },
   "metadata": {
-    "title": "Plantiful - Protože na rostlinách nám záleží",
+    "title": "Plantiful - Protože nám na rostlinách záleží",
     "description": "Plantiful je mobilní aplikace pro pěstování rostlin. Objevte náš příběh od myšlenky až po open-source vydání."
   }
 }

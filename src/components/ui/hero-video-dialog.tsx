@@ -98,28 +98,30 @@ export function HeroVideoDialog({
       <button
         type="button"
         aria-label="Play video"
-        className="group relative cursor-pointer border-0 bg-transparent p-0"
+        className="group relative block w-full cursor-pointer border-0 bg-transparent p-0"
         onClick={() => setIsVideoOpen(true)}
       >
-        <img
-          src={thumbnailSrc}
-          alt={thumbnailAlt}
-          width={1920}
-          height={1080}
-          className="w-full rounded-md shadow-lg transition-all duration-200 ease-out group-hover:brightness-[0.8]"
-        />
-        <div className="absolute inset-0 flex scale-[0.9] items-center justify-center rounded-2xl transition-all duration-200 ease-out group-hover:scale-100">
-          <div className="bg-primary/10 flex size-16 items-center justify-center rounded-full backdrop-blur-md">
-            <div
-              className={`from-primary/30 to-primary relative flex size-12 scale-100 items-center justify-center rounded-full bg-gradient-to-b shadow-md transition-all duration-200 ease-out group-hover:scale-[1.2]`}
-            >
-              <Play
-                className="size-5 scale-100 fill-white text-white transition-transform duration-200 ease-out group-hover:scale-105"
-                style={{
-                  filter:
-                    "drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06))",
-                }}
-              />
+        <div className="relative aspect-video w-full overflow-hidden rounded-2xl shadow-lg transition-all duration-200 ease-out group-hover:brightness-[0.8]">
+          <img
+            src={thumbnailSrc}
+            alt={thumbnailAlt}
+            width={1920}
+            height={1080}
+            className="size-full object-cover"
+          />
+          <div className="absolute inset-0 flex scale-[0.9] items-center justify-center transition-all duration-200 ease-out group-hover:scale-100">
+            <div className="bg-primary/10 flex size-16 items-center justify-center rounded-full backdrop-blur-md">
+              <div
+                className={`from-primary/30 to-primary relative flex size-12 scale-100 items-center justify-center rounded-full bg-gradient-to-b shadow-md transition-all duration-200 ease-out group-hover:scale-[1.2]`}
+              >
+                <Play
+                  className="size-5 scale-100 fill-white text-white transition-transform duration-200 ease-out group-hover:scale-105"
+                  style={{
+                    filter:
+                      "drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06))",
+                  }}
+                />
+              </div>
             </div>
           </div>
         </div>
