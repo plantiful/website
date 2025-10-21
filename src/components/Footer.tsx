@@ -7,13 +7,13 @@ export default function Footer() {
   return (
     <footer className="w-full">
       <div className="mx-auto w-full max-w-[1600px] px-6 sm:px-10 md:px-16 lg:px-24">
-        <div className="grid grid-cols-2 gap-8 py-10 sm:grid-cols-3 md:flex md:flex-wrap md:items-center md:justify-center md:gap-14 lg:gap-20">
+        <div className="grid grid-cols-2 gap-6 py-10 sm:grid-cols-3 md:flex md:flex-wrap md:items-center md:justify-center md:gap-10 lg:gap-12">
           <Image
             src="/purkynka.png"
             alt={t("footer.partners.purkynka")}
             width={200}
             height={60}
-            className="mx-auto h-10 w-auto object-contain sm:h-12 md:h-14 lg:h-16"
+            className="mx-auto h-12 w-auto object-contain sm:h-14 md:h-16 lg:h-[4.5rem]"
             priority
           />
           <Image
@@ -21,28 +21,21 @@ export default function Footer() {
             alt={t("footer.partners.kyndryl")}
             width={200}
             height={60}
-            className="mx-auto h-10 w-auto object-contain sm:h-12 md:h-14 lg:h-16"
+            className="mx-auto h-12 w-auto object-contain sm:h-14 md:h-16 lg:h-[4.5rem]"
           />
           <Image
             src="/JA.png"
             alt={t("footer.partners.ja")}
             width={200}
             height={60}
-            className="mx-auto h-10 w-auto object-contain sm:h-12 md:h-14 lg:h-16"
-          />
-          <Image
-            src="/JIC.png"
-            alt={t("footer.partners.jic")}
-            width={200}
-            height={60}
-            className="mx-auto h-10 w-auto object-contain sm:h-12 md:h-14 lg:h-16"
+            className="mx-auto h-12 w-auto object-contain sm:h-14 md:h-16 lg:h-[4.5rem]"
           />
           <Image
             src="/plantid.png"
             alt={t("footer.partners.plantid")}
             width={200}
             height={60}
-            className="mx-auto h-10 w-auto object-contain sm:h-12 md:h-14 lg:h-16"
+            className="mx-auto h-12 w-auto object-contain sm:h-14 md:h-16 lg:h-[4.5rem]"
           />
         </div>
         <div className="h-[2px] bg-black" />

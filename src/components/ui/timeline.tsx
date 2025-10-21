@@ -113,9 +113,9 @@ export const Timeline = ({ data, headerTitle }: TimelineProps) => {
         )}
       </div>
 
-      <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
+      <div ref={ref} className="relative max-w-7xl mx-auto pb-20 px-6 sm:px-10 md:px-0">
         {/* Single sticky growing pot */}
-        <div className="sticky top-40 w-24 h-24 md:w-28 md:h-28 z-10 pointer-events-none -ml-6 md:-ml-20">
+        <div className="sticky top-40 w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 z-10 pointer-events-none -ml-4 sm:ml-2 md:-ml-20">
           <StickyGrowingPot scrollProgress={potProgress} className="w-full h-full" />
         </div>
 
@@ -134,13 +134,13 @@ export const Timeline = ({ data, headerTitle }: TimelineProps) => {
             >
               <div className="sticky flex flex-col md:flex-row items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full">
                 {/* Milestone title */}
-                <h3 className="relative hidden md:block text-xl md:pl-20 md:text-5xl font-bold text-neutral-500 dark:text-neutral-500">
+                <h3 className="relative hidden md:block text-xl md:pl-20 md:text-5xl font-bold text-neutral-900 dark:text-white">
                   {item.title}
                 </h3>
               </div>
 
-              <div className="relative pl-20 pr-4 md:pl-4 w-full">
-                <h3 className="md:hidden block text-2xl mb-4 text-left font-bold text-neutral-500 dark:text-neutral-500">
+              <div className="relative pl-24 sm:pl-28 pr-4 md:pl-4 w-full">
+                <h3 className="md:hidden block text-2xl mb-4 text-left font-bold text-neutral-900 dark:text-white">
                   {item.title}
                 </h3>
                 {item.content}{" "}

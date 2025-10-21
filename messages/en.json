@@ -7,18 +7,25 @@
     "subtitle": "Discover your inner self\nthrough growing.",
     "github_button": "See on GitHub",
     "journey_button": "Our journey",
-    "video_alt": "Watch an example demo video",
-    "background_alt": "Botanical garden background"
+    "background_alt": "Emerald-tinted background texture with soft plant silhouettes",
+    "video_alt": "Watch an example demo video"
   },
   "intro": {
-    "title": "Introducing the Plantiful app.",
+    "title": "Introducing the Plantiful app",
+    "title_accent": "Plantiful",
     "subtitle": "Especially if you're struggling with plants.",
     "phones_alt": "Plantiful app screens on phones"
   },
-  "acks": {
-    "title": "Acknowledgements",
-    "description": "We are deeply grateful to our mentors from RedHat Summer Camp, Kyndryl, JA Czech, Purkyňka High School and JIC, who gave us room to experiment, patiently shared their expertise and believed that Plantiful could genuinely help people. Their mentorship encouraged us to iterate faster, prototype new features and keep raising the bar for the experience we deliver.\n\nWe also want to thank the communities, partners, families and early users who shared feedback, tested imperfect builds and celebrated every milestone at our side. Your trust turns this journey into something bigger than a school project — it keeps us growing.",
+  "teamMessage": {
+    "title": "Word From Our Team",
+    "title_accent": "Team",
+    "description": "Plantiful started as a high school experiment and grew thanks to mentors, partners, and the community that walked with us. As we move on to new adventures, we've wrapped up our work and open-sourced the product, docs, and design system so anyone can continue the journey.\n\nThank you for growing Plantiful with us — Robin Jarusek, Karol Raffay, Valon Mavriqi, Jan Trunecek.",
     "image_alt": "Plantiful team photo in a phone mockup"
+  },
+  "acks": {
+    "title": "Acknowledgement",
+    "description": "We are deeply grateful to our mentors from RedHat Summer Camp, Kyndryl, JA Czech, Purkyňka High School and JIC, who gave us room to experiment, patiently shared their expertise and believed that Plantiful could genuinely help people. Their mentorship encouraged us to iterate faster, prototype new features and keep raising the bar for the experience we deliver.\n\nWe also want to thank the communities, partners, families and early users who shared feedback, tested imperfect builds and celebrated every milestone at our side. Your trust turns this journey into something bigger than a school project — it keeps us growing.",
+    "image_alt": "Illustration of a handshake symbolising collaboration"
   },
   "timeline": {
     "title": "Our Journey",
@@ -31,7 +38,8 @@
       "ja_expo_team": "Plantiful team holding awards at JA Expo",
       "fekt_stage": "Presenting our research at the FEKT EEICT conference",
       "fekt_award": "Receiving recognition at the FEKT EEICT awards ceremony",
-      "release_preview": "Preview of the open-source Plantiful interface"
+      "release_preview": "Preview of the open-source Plantiful interface",
+      "summercamp_stage": "Presenting Plantiful during the Red Hat Summer Camp finale"
     },
     "foreword": {
       "title": "RedHat Summer Camp",
@@ -43,7 +51,7 @@
       "links": [
         {
           "label": "Red Hat Summer Camp 2022 recap",
-          "description": "Official summary of the program featuring the winning teams.",
+          "description": "Red Hat Research recap of the 2022 Brno camp where we first pitched Plantiful.",
           "href": "https://research.redhat.com/blog/2022/10/26/open-source-values-are-the-focus-of-red-hat-summer-camp-in-brno/",
           "type": "article"
         }
@@ -58,8 +66,8 @@
       ],
       "links": [
         {
-          "label": "Kyndryl Challenge recap",
-          "description": "Blog recap of the national innovation contest.",
+          "label": "Kyndryl Challenge recap (CZ)",
+          "description": "School article covering the Kyndryl Challenge finale where Plantiful earned a Kyndryl internship.",
           "href": "https://www.purkynka.cz/aktualne/finale-5-rocniku-souteze-kyndryl-challenge/",
           "type": "article"
         },
@@ -102,8 +110,8 @@
       ],
       "links": [
         {
-          "label": "JA Expo story",
-          "description": "Article capturing our booth experience and live demos.",
+          "label": "JA Expo highlights (CZ)",
+          "description": "School article about JA Expo 2023 where Plantiful won Best Business Pitch and 2nd place in STEM.",
           "href": "https://www.purkynka.cz/aktualne/dostali-jsme-se-do-top-desitky-ja-studentskych-firem-letosniho-roku/",
           "type": "article"
         },
@@ -117,23 +125,23 @@
     },
     "fekt_eeict": {
       "title": "FEKT EEICT",
-      "description": "We documented our learnings in a research paper for the FEKT EEICT conference where we presented the data we gathered from early pilots.\n\nThe committee awarded our work and encouraged us to keep bridging academic insight with product development.",
+      "description": "We presented Plantiful at the Student EEICT 2024 conference hosted by FEKT VUT in Brno, sharing how our app uses Plant.id data to guide everyday care.\n\nAn academic and industry jury awarded the poster third place, and their feedback shaped the next iteration of our product.",
       "highlights": [
-        "Published our methodology and findings in a peer-reviewed paper.",
-        "Received the FEKT EEICT award for applied research."
+        "Won 3rd place in the Student EEICT 2024 poster session for Plantiful.",
+        "Demonstrated how Plant.id’s AI powers actionable plant-care guidance."
       ],
       "links": [
         {
-          "label": "Plantiful EEICT research paper",
-          "description": "Download the full paper covering our methodology and results.",
+          "label": "Student EEICT 2024 recap (CZ)",
+          "description": "School article covering our third-place finish at the conference.",
           "href": "https://www.purkynka.cz/aktualne/studentska-appka-pro-zapalene-botaniky/",
-          "type": "research"
+          "type": "article"
         },
         {
-          "label": "Research paper (PDF)",
-          "description": "Download the full Plantiful EEICT paper as submitted to the conference.",
+          "label": "Conference poster (PDF)",
+          "description": "Download the Plantiful poster we presented at Student EEICT 2024.",
           "href": "/Plantiful.pdf",
-          "type": "research"
+          "type": "resource"
         }
       ]
     },
@@ -165,7 +173,6 @@
       "purkynka": "Purkynka",
       "kyndryl": "Kyndryl",
       "ja": "JA Czech",
-      "jic": "JIC",
       "plantid": "PlantID"
     },
     "cta_title": "Plantiful",

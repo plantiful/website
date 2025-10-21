@@ -7,6 +7,7 @@ import {
   useState,
   type CSSProperties,
   type MouseEventHandler,
+  type ReactNode,
 } from "react";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { Timeline } from "@/components/ui/timeline";
@@ -21,7 +22,7 @@ type BackgroundArtifactProps = {
   width: number;
   height: number;
   className?: string;
-  style: CSSProperties;
+  style?: CSSProperties;
   priority?: boolean;
 };
 
@@ -55,9 +56,46 @@ function BackgroundArtifact({
   );
 }
 
+type ArtifactLayerProps = {
+  maxWidth: number | string;
+  children: ReactNode;
+  outerClassName?: string;
+  innerClassName?: string;
+};
+
+function ArtifactLayer({
+  maxWidth,
+  children,
+  outerClassName,
+  innerClassName,
+}: ArtifactLayerProps) {
+  const resolvedMaxWidth =
+    typeof maxWidth === "number" ? `${maxWidth}px` : maxWidth;
+
+  return (
+    <div
+      className={cn(
+        "pointer-events-none absolute inset-0 overflow-hidden",
+        outerClassName,
+      )}
+    >
+      <div
+        className={cn("relative mx-auto h-full w-full", innerClassName)}
+        style={{ maxWidth: resolvedMaxWidth }}
+      >
+        {children}
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   const t = useTranslations();
   const [isVideoOpen, setIsVideoOpen] = useState(false);
+  const introTitle = t("intro.title");
+  const introTitleAccent = t("intro.title_accent");
+  const teamMessageTitle = t("teamMessage.title");
+  const teamMessageTitleAccent = t("teamMessage.title_accent");
   const handleJourneyClick = useCallback<MouseEventHandler<HTMLAnchorElement>>((event) => {
     if (
       event.defaultPrevented ||
@@ -224,48 +262,53 @@ export default function Home() {
 
       {/* Introduction section */}
       <section className="relative z-10 w-full bg-white min-h-screen flex items-center overflow-x-hidden">
-        {/* scattered background artifacts */}
-        <BackgroundArtifact
-          src="/big_bg_artifact.svg"
-          alt={t("common.decorative_alt")}
-          width={1024}
-          height={1024}
-          className="rotate-90 opacity-100"
-          style={{
-            left: "clamp(-32rem, -26vw, -18rem)",
-            top: "clamp(-30rem, -28vh, -16rem)",
-            width: "min(70vw, 42rem)",
-          }}
-        />
-        <BackgroundArtifact
-          src="/big_bg_artifact.svg"
-          alt={t("common.decorative_alt")}
-          width={1024}
-          height={1024}
-          className="opacity-100"
-          style={{
-            top: "clamp(8rem, 24vh, 20rem)",
-            right: "clamp(-20rem, -10vw, -6rem)",
-            width: "min(66vw, 38rem)",
-          }}
-        />
-        <BackgroundArtifact
-          src="/bg_artifact.svg"
-          alt={t("common.decorative_alt")}
-          width={352}
-          height={194}
-          className="opacity-100"
-          style={{
-            top: "clamp(-10rem, -6vh, -2rem)",
-            left: "clamp(6rem, 18vw, 26rem)",
-            width: "min(32vw, 18rem)",
-          }}
-        />
+        <ArtifactLayer maxWidth="1600px">
+          <BackgroundArtifact
+            src="/big_bg_artifact.svg"
+            alt={t("common.decorative_alt")}
+            width={1024}
+            height={1024}
+            className="rotate-90 opacity-100 left-0 top-[-12rem] -translate-x-[45%] sm:top-[-16rem] sm:-translate-x-[50%] md:top-[-20rem] md:-translate-x-[52%] lg:top-[-22rem] lg:-translate-x-[55%]"
+            style={{
+              width: "min(calc(100% * 0.7), 42rem)",
+            }}
+          />
+          <BackgroundArtifact
+            src="/big_bg_artifact.svg"
+            alt={t("common.decorative_alt")}
+            width={1024}
+            height={1024}
+            className="opacity-100 right-0 top-[10rem] translate-x-[40%] sm:top-[12rem] sm:translate-x-[45%] md:top-[14rem] md:translate-x-[48%] lg:top-[16rem] lg:translate-x-[52%]"
+            style={{
+              width: "min(calc(100% * 0.6), 38rem)",
+            }}
+          />
+          <BackgroundArtifact
+            src="/bg_artifact.svg"
+            alt={t("common.decorative_alt")}
+            width={352}
+            height={194}
+            className="opacity-100 left-0 top-[-2rem] -translate-x-[60%] sm:-translate-x-[55%] md:top-[-4rem] md:-translate-x-[52%]"
+            style={{
+              width: "min(calc(100% * 0.32), 18rem)",
+            }}
+          />
+        </ArtifactLayer>
 
         <div className="mx-auto grid w-full max-w-[1600px] grid-cols-1 items-center justify-center gap-0 md:gap-2 py-24 px-6 sm:px-10 md:px-16 lg:px-24 md:pl-24 lg:pl-54 md:grid-cols-[auto_auto]">
           <div className="max-w-[540px] md:pr-0 lg:pr-2">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.02] tracking-[-0.01em] text-neutral-900">
-              {t("intro.title")}
+              {introTitleAccent && introTitle.includes(introTitleAccent)
+                ? (
+                  <>
+                    {introTitle.slice(0, introTitle.indexOf(introTitleAccent))}
+                    <span className="text-emerald-800">{introTitleAccent}</span>
+                    {introTitle.slice(
+                      introTitle.indexOf(introTitleAccent) + introTitleAccent.length,
+                    )}
+                  </>
+                )
+                : introTitle}
             </h2>
             <p className="mt-6 text-lg md:text-xl text-neutral-700">
               {t("intro.subtitle")}
@@ -297,19 +340,21 @@ export default function Home() {
           />
         </div>
 
-        {/* background artifacts - full-section overlay to avoid horizontal overflow */}
-        <div className="pointer-events-none absolute inset-0 overflow-x-hidden">
+        {/* background artifacts anchored to the timeline container */}
+        <ArtifactLayer
+          maxWidth="1600px"
+          outerClassName="overflow-x-hidden"
+          innerClassName="h-full"
+        >
           <BackgroundArtifact
             key="bg-artifact-1"
             src="/big_bg_artifact.svg"
             alt={t("common.decorative_alt")}
             width={1024}
             height={1024}
-            className="z-0 -translate-y-1/2"
+            className="z-0 -translate-y-1/2 left-0 top-1/2 -translate-x-[60%] sm:-translate-x-[58%] md:-translate-x-[55%]"
             style={{
-              left: "clamp(-30rem, -22vw, -16rem)",
-              top: "50%",
-              width: "min(74vw, 44rem)",
+              width: "min(calc(100% * 0.75), 44rem)",
             }}
           />
           <BackgroundArtifact
@@ -318,11 +363,9 @@ export default function Home() {
             alt={t("common.decorative_alt")}
             width={1024}
             height={1024}
-            className="z-0"
+            className="z-0 right-0 top-[10rem] translate-x-[48%] sm:top-[12rem] sm:translate-x-[50%] md:top-[14rem] md:translate-x-[52%]"
             style={{
-              top: "clamp(6rem, 22vh, 20rem)",
-              right: "clamp(-24rem, -16vw, -10rem)",
-              width: "min(70vw, 42rem)",
+              width: "min(calc(100% * 0.68), 42rem)",
             }}
           />
 
@@ -332,11 +375,9 @@ export default function Home() {
             alt={t("common.decorative_alt")}
             width={1024}
             height={1024}
-            className="z-0 rotate-180"
+            className="z-0 rotate-180 right-0 bottom-[-4rem] translate-x-[52%] md:bottom-[-8rem] md:translate-x-[55%]"
             style={{
-              bottom: "clamp(-16rem, -12vh, -4rem)",
-              right: "clamp(-26rem, -18vw, -12rem)",
-              width: "min(72vw, 42rem)",
+              width: "min(calc(100% * 0.7), 42rem)",
             }}
           />
 
@@ -346,11 +387,9 @@ export default function Home() {
             alt={t("common.decorative_alt")}
             width={352}
             height={194}
-            className="z-0"
+            className="z-0 right-0 top-[16rem] translate-x-[38%] md:translate-x-[42%] lg:translate-x-[46%]"
             style={{
-              top: "clamp(8rem, 26vh, 20rem)",
-              right: "clamp(2rem, 10vw, 12rem)",
-              width: "min(30vw, 18rem)",
+              width: "min(calc(100% * 0.28), 18rem)",
             }}
           />
           <BackgroundArtifact
@@ -359,11 +398,9 @@ export default function Home() {
             alt={t("common.decorative_alt")}
             width={352}
             height={194}
-            className="z-0"
+            className="z-0 left-0 top-[24rem] -translate-x-[45%] md:-translate-x-[50%] lg:-translate-x-[52%]"
             style={{
-              top: "clamp(20rem, 62vh, 34rem)",
-              left: "clamp(1rem, 12vw, 14rem)",
-              width: "min(30vw, 18rem)",
+              width: "min(calc(100% * 0.3), 18rem)",
             }}
           />
           <BackgroundArtifact
@@ -372,11 +409,9 @@ export default function Home() {
             alt={t("common.decorative_alt")}
             width={352}
             height={194}
-            className="z-0 -translate-y-1/2"
+            className="z-0 -translate-y-1/2 right-0 top-1/2 translate-x-[36%] sm:translate-x-[38%] md:translate-x-[42%] lg:translate-x-[46%]"
             style={{
-              top: "50%",
-              right: "clamp(-10rem, 0vw, 10rem)",
-              width: "min(28vw, 16rem)",
+              width: "min(calc(100% * 0.26), 16rem)",
             }}
           />
           <BackgroundArtifact
@@ -385,13 +420,89 @@ export default function Home() {
             alt={t("common.decorative_alt")}
             width={352}
             height={194}
-            className="z-0"
+            className="z-0 right-0 bottom-[2rem] translate-x-[34%] md:bottom-[3rem] md:translate-x-[38%] lg:bottom-[4rem] lg:translate-x-[42%]"
             style={{
-              bottom: "clamp(1rem, 10vh, 6rem)",
-              right: "clamp(1rem, 6vw, 5rem)",
-              width: "min(26vw, 15rem)",
+              width: "min(calc(100% * 0.24), 15rem)",
             }}
           />
+        </ArtifactLayer>
+      </section>
+
+      {/* Word from our Team section */}
+      <section
+        id="team-message"
+        className="relative w-full bg-white overflow-hidden py-20"
+      >
+        {/* background accents */}
+        <ArtifactLayer maxWidth="1400px">
+          <BackgroundArtifact
+            src="/big_bg_artifact.svg"
+            alt={t("common.decorative_alt")}
+            width={1024}
+            height={1024}
+            className="rotate-45 opacity-100 left-0 top-[-8rem] -translate-x-[52%] sm:top-[-10rem] sm:-translate-x-[54%] lg:top-[-12rem] lg:-translate-x-[56%]"
+            style={{
+              width: "min(calc(100% * 0.7), 44rem)",
+            }}
+          />
+          <BackgroundArtifact
+            src="/big_bg_artifact.svg"
+            alt={t("common.decorative_alt")}
+            width={1024}
+            height={1024}
+            className="opacity-100 right-0 bottom-[-2rem] translate-x-[48%] sm:bottom-[-3rem] sm:translate-x-[50%] lg:bottom-[-4rem] lg:translate-x-[52%]"
+            style={{
+              width: "min(calc(100% * 0.68), 42rem)",
+            }}
+          />
+        </ArtifactLayer>
+
+        <div className="relative mx-auto flex w-full max-w-[1400px] flex-col items-center gap-10 px-6 sm:px-10 md:px-16 lg:px-24">
+          <div className="text-center max-w-4xl">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.02] tracking-[-0.01em] text-neutral-900">
+              {teamMessageTitleAccent && teamMessageTitle.includes(teamMessageTitleAccent)
+                ? (
+                  <>
+                    {teamMessageTitle.slice(
+                      0,
+                      teamMessageTitle.indexOf(teamMessageTitleAccent),
+                    )}
+                    <span className="text-emerald-800">{teamMessageTitleAccent}</span>
+                    {teamMessageTitle.slice(
+                      teamMessageTitle.indexOf(teamMessageTitleAccent) +
+                        teamMessageTitleAccent.length,
+                    )}
+                  </>
+                )
+                : teamMessageTitle}
+            </h2>
+            <div className="mx-auto mt-3 h-1.5 w-24 bg-emerald-800 rounded" />
+          </div>
+
+          <Image
+            src="/timeline/team_phone.png"
+            alt={t("teamMessage.image_alt")}
+            width={1606}
+            height={768}
+            priority
+            className="w-full max-w-[920px] h-auto drop-shadow-2xl"
+            sizes="(min-width: 1600px) 920px, (min-width: 1024px) 75vw, 100vw"
+          />
+
+          <div className="max-w-[820px] text-center">
+            {t("teamMessage.description")
+              .split("\n\n")
+              .map((paragraph, idx) => (
+                <p
+                  key={idx}
+                  className={`text-lg md:text-xl text-neutral-700 ${
+                    idx === 0 ? "mt-8" : "mt-6"
+                  }`}
+                >
+                  {paragraph}
+                </p>
+              ))}
+          </div>
         </div>
       </section>
 
@@ -401,30 +512,28 @@ export default function Home() {
         className="relative w-full bg-white overflow-hidden py-20"
       >
         {/* background accents */}
-        <BackgroundArtifact
-          src="/big_bg_artifact.svg"
-          alt={t("common.decorative_alt")}
-          width={1024}
-          height={1024}
-          className="rotate-45 opacity-100"
-          style={{
-            left: "clamp(-28rem, -20vw, -12rem)",
-            top: "clamp(-12rem, -8vh, -4rem)",
-            width: "min(74vw, 44rem)",
-          }}
-        />
-        <BackgroundArtifact
-          src="/big_bg_artifact.svg"
-          alt={t("common.decorative_alt")}
-          width={1024}
-          height={1024}
-          className="opacity-100"
-          style={{
-            right: "clamp(-20rem, -12vw, -4rem)",
-            bottom: "clamp(-8rem, -6vh, -1rem)",
-            width: "min(72vw, 42rem)",
-          }}
-        />
+        <ArtifactLayer maxWidth="1400px">
+          <BackgroundArtifact
+            src="/big_bg_artifact.svg"
+            alt={t("common.decorative_alt")}
+            width={1024}
+            height={1024}
+            className="rotate-45 opacity-100 left-0 top-[-8rem] -translate-x-[52%] sm:top-[-10rem] sm:-translate-x-[54%] lg:top-[-12rem] lg:-translate-x-[56%]"
+            style={{
+              width: "min(calc(100% * 0.7), 44rem)",
+            }}
+          />
+          <BackgroundArtifact
+            src="/big_bg_artifact.svg"
+            alt={t("common.decorative_alt")}
+            width={1024}
+            height={1024}
+            className="opacity-100 right-0 bottom-[-2rem] translate-x-[48%] sm:bottom-[-3rem] sm:translate-x-[50%] lg:bottom-[-4rem] lg:translate-x-[52%]"
+            style={{
+              width: "min(calc(100% * 0.68), 42rem)",
+            }}
+          />
+        </ArtifactLayer>
 
         <div className="relative mx-auto flex w-full max-w-[1400px] flex-col items-center gap-10 px-6 sm:px-10 md:px-16 lg:px-24">
           <div className="text-center max-w-4xl">
@@ -435,13 +544,13 @@ export default function Home() {
           </div>
 
           <Image
-            src="/timeline/team_phone.png"
+            src="/handshake.svg"
             alt={t("acks.image_alt")}
-            width={1606}
-            height={768}
+            width={540}
+            height={359}
             priority
-            className="w-full max-w-[920px] h-auto drop-shadow-2xl"
-            sizes="(min-width: 1600px) 920px, (min-width: 1024px) 75vw, 100vw"
+            className="w-full max-w-[540px] h-auto drop-shadow-2xl"
+            sizes="(min-width: 1024px) 540px, 80vw"
           />
 
           <div className="max-w-[820px] text-center">

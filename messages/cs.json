@@ -7,21 +7,28 @@
     "subtitle": "Objev svoje vnitřní já\nv pěstování.",
     "github_button": "Repozitář",
     "journey_button": "Náš příběh",
-    "video_alt": "Sleduj ukázkové video",
-    "background_alt": "Pozadí botanické zahrady"
+    "background_alt": "Smaragdově tónované texturované pozadí s jemnými obrysy rostlin",
+    "video_alt": "Sleduj ukázkové video"
   },
   "intro": {
-    "title": "Představujeme ti aplikaci Plantiful.",
+    "title": "Představujeme ti aplikaci Plantiful",
+    "title_accent": "Plantiful",
     "subtitle": "Právě pokud jsi s rostlinami v bezsnázích.",
     "phones_alt": "Obrazovky aplikace Plantiful na telefonech"
+  },
+  "teamMessage": {
+    "title": "Slovo Od Našeho Týmu",
+    "title_accent": "Týmu",
+    "description": "Plantiful začalo jako středoškolský experiment a rostlo díky mentorům, partnerům a komunitě, která stála po našem boku. Jak se posouváme k novým výzvám, uzavřeli jsme naši práci a vydali produkt, dokumentaci i design systém jako open source, aby mohl kdokoli pokračovat v naší cestě.\n\nDěkujeme, že jste nám pomohli Plantiful rozkvést — Robin Jarusek, Karol Raffay, Valon Mavriqi, Jan Trunecek.",
+    "image_alt": "Fotografie týmu Plantiful v telefoním mockupu"
   },
   "acks": {
     "title": "Poděkování",
     "description": "Jsme nesmírně vděční mentorům z RedHat Summer Campu, společnosti Kyndryl, JA Czech, Střední škole Purkyňova a JICu, kteří nám dali prostor experimentovat, trpělivě sdíleli své zkušenosti a věřili, že Plantiful může skutečně pomáhat lidem. Jejich vedení nás motivovalo k rychlejším iteracím, odvážným prototypům a neustálému zvyšování laťky uživatelského zážitku.\n\nPoděkování patří také komunitám, partnerům, rodinám a prvním uživatelům, kteří nám poskytovali zpětnou vazbu, testovali nehotové verze a slavili s námi každou dosaženou metu. Vaše důvěra z této cesty dělá víc než jen školní projekt — pomáhá nám růst.",
-    "image_alt": "Fotografie týmu Plantiful v telefoním mockupu"
+    "image_alt": "Ilustrace podaných rukou symbolizující spolupráci"
   },
   "timeline": {
-    "title": "Naše cesta",
+    "title": "Naše Cesta",
     "gallery": {
       "summercamp": "Tým Plantiful slaví vítězství na Red Hat Summer Camp 2022",
       "kyndryl_challenge_stage": "Plantiful prezentuje na finále Kyndryl Challenge",
@@ -31,7 +38,8 @@
       "ja_expo_team": "Tým Plantiful s oceněními na JA Expo",
       "fekt_stage": "Prezentace výzkumu Plantiful na konferenci FEKT EEICT",
       "fekt_award": "Přebírání ocenění na FEKT EEICT",
-      "release_preview": "Náhled open-source rozhraní Plantiful"
+      "release_preview": "Náhled open-source rozhraní Plantiful",
+      "summercamp_stage": "Prezentace Plantiful ve finále Red Hat Summer Campu"
     },
     "foreword": {
       "title": "RedHat Summer Camp",
@@ -43,7 +51,7 @@
       "links": [
         {
           "label": "Red Hat Summer Camp 2022 – shrnutí",
-          "description": "Oficiální souhrn programu s vítěznými projekty.",
+          "description": "Red Hat Research popisuje brněnský camp 2022, kde jsme Plantiful poprvé představili mentorům.",
           "href": "https://research.redhat.com/blog/2022/10/26/open-source-values-are-the-focus-of-red-hat-summer-camp-in-brno/",
           "type": "article"
         }
@@ -58,8 +66,8 @@
       ],
       "links": [
         {
-          "label": "Shrnutí Kyndryl Challenge",
-          "description": "Blogový recap národní inovační soutěže.",
+          "label": "Shrnutí Kyndryl Challenge (článek)",
+          "description": "Školní článek o finále Kyndryl Challenge, kde Plantiful získal podporu i odbornou stáž v Kyndrylu.",
           "href": "https://www.purkynka.cz/aktualne/finale-5-rocniku-souteze-kyndryl-challenge/",
           "type": "article"
         },
@@ -102,8 +110,8 @@
       ],
       "links": [
         {
-          "label": "Příběh z JA Expo",
-          "description": "Článek zachycující náš stánek a živé ukázky.",
+          "label": "JA Expo 2023 (článek)",
+          "description": "Reportáž o tom, jak Plantiful na JA Expo vyhrál Best Business Pitch a 2. místo ve STEM.",
           "href": "https://www.purkynka.cz/aktualne/dostali-jsme-se-do-top-desitky-ja-studentskych-firem-letosniho-roku/",
           "type": "article"
         },
@@ -117,23 +125,23 @@
     },
     "fekt_eeict": {
       "title": "FEKT EEICT",
-      "description": "Na konferenci FEKT EEICT jsme prezentovali výzkumnou práci shrnující data z prvních pilotů Plantiful a to, jak jsme je promítli do produktu.\n\nPorota naši práci ocenila a povzbudila nás, abychom dál propojovali akademické poznatky s vývojem produktu.",
+      "description": "Plantiful jsme představili na konferenci Student EEICT 2024 na FEKT VUT v Brně, kde jsme ukázali, jak aplikace využívá data Plant.id pro každodenní péči.\n\nPorota složená z akademiků a zástupců firem ocenila náš poster třetím místem a její zpětná vazba nám pomohla nasměrovat další verzi produktu.",
       "highlights": [
-        "Zveřejnili jsme metodiku i výsledky v recenzované práci.",
-        "Získali jsme ocenění FEKT EEICT za aplikovaný výzkum."
+        "Získali jsme 3. místo v posterové sekci Student EEICT 2024.",
+        "Ukázali jsme, jak AI Plant.id převádí data o rostlinách do praktických doporučení péče."
       ],
       "links": [
         {
-          "label": "Výzkumná práce Plantiful pro EEICT",
-          "description": "Stáhni si kompletní paper s metodikou a výsledky.",
+          "label": "Student EEICT 2024 (článek, CZ)",
+          "description": "Školní článek popisující naše třetí místo na konferenci.",
           "href": "https://www.purkynka.cz/aktualne/studentska-appka-pro-zapalene-botaniky/",
-          "type": "research"
+          "type": "article"
         },
         {
-          "label": "Výzkumná práce (PDF)",
-          "description": "Stáhni si kompletní paper Plantiful pro konferenci EEICT.",
+          "label": "Konferenční poster (PDF)",
+          "description": "Poster Plantiful představený na Student EEICT 2024.",
           "href": "/Plantiful.pdf",
-          "type": "research"
+          "type": "resource"
         }
       ]
     },
@@ -165,7 +173,6 @@
       "purkynka": "Purkynka",
       "kyndryl": "Kyndryl",
       "ja": "JA Czech",
-      "jic": "JIC",
       "plantid": "PlantID"
     },
     "cta_title": "Plantiful",

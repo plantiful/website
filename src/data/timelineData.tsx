@@ -53,9 +53,15 @@ export const getTimelineData = (t: TranslationFunction) => [
             sizes: imageSizes,
             priority: true,
           },
+          {
+            src: "/timeline/redhat.JPG",
+            alt: t("timeline.gallery.summercamp_stage"),
+            fill: true,
+            sizes: imageSizes,
+          },
         ]}
         links={getLinks(t, "timeline.foreword.links")}
-        mediaColumns={1}
+        mediaColumns={2}
       />
     ),
   },

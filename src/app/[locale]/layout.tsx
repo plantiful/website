@@ -29,15 +29,15 @@ export async function generateMetadata({
   const { locale } = await params;
   const messages = (await getMessages({ locale })) as any;
 
-  const iconPath = "/adaptive-icon.png";
+  const adaptiveIcon = "/adaptive-icon.png";
 
   return {
     title: messages.metadata?.title || "Plantiful",
     description: messages.metadata?.description || "Plantiful showcase",
     icons: {
-      icon: iconPath,
-      shortcut: iconPath,
-      apple: iconPath,
+      icon: [{ url: adaptiveIcon, type: "image/png" }],
+      shortcut: adaptiveIcon,
+      apple: [{ url: adaptiveIcon, type: "image/png" }],
     },
   };
 }

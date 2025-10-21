@@ -9,11 +9,11 @@ import {
   Link2,
   Newspaper,
   FileText,
-  type LucideIcon,
 } from "lucide-react";
 import { TimelineLightboxImage, type TimelineLightboxImageProps } from "@/components/ui/timeline-lightbox-image";
 import { cn } from "@/lib/utils";
-import type { ReactNode } from "react";
+import type { ComponentType, ReactNode } from "react";
+import { GithubMark } from "@/components/icons/GithubMark";
 
 type MilestoneLinkType = "article" | "press" | "video" | "research" | "resource";
 
@@ -33,7 +33,9 @@ interface TimelineMilestoneContentProps {
   children?: ReactNode;
 }
 
-const linkIconMap: Record<MilestoneLinkType, LucideIcon> = {
+type LinkIconComponent = ComponentType<{ className?: string }>;
+
+const linkIconMap: Record<MilestoneLinkType, LinkIconComponent> = {
   article: FileText,
   press: Newspaper,
   video: Clapperboard,
@@ -119,7 +121,9 @@ export function TimelineMilestoneContent({
       {safeLinks.length > 0 && (
         <div className="grid gap-4 sm:grid-cols-2">
           {safeLinks.map((link) => {
-            const Icon = getLinkIcon(link.type);
+            const isGithubResource =
+              link.type === "resource" && /github\.com/i.test(link.href);
+            const Icon = isGithubResource ? GithubMark : getLinkIcon(link.type);
 
             return (
               <a

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image, { ImageProps } from "next/image";
+import Image, { ImageProps, type StaticImageData } from "next/image";
 import { AnimatePresence, motion } from "motion/react";
 import { XIcon } from "lucide-react";
 
@@ -48,7 +48,8 @@ export function TimelineLightboxImage({
     };
   }, [isOpen]);
 
-  const resolvedSrc = typeof src === "string" ? src : src.src;
+  const resolvedSrc =
+    typeof src === "string" ? src : (src as StaticImageData).src;
 
   return (
     <>
