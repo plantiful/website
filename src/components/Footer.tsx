@@ -1,82 +1,125 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
+const InstagramIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={1.8}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    {...props}
+  >
+    <rect x={3} y={3} width={18} height={18} rx={4.5} />
+    <circle cx={12} cy={12} r={4.5} />
+    <circle cx={17.5} cy={6.5} r={1.2} fill="currentColor" stroke="none" />
+  </svg>
+);
+
+const MailIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={1.8}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    {...props}
+  >
+    <rect x={3} y={5} width={18} height={14} rx={2.5} />
+    <path d="M4 7l7.964 6a1 1 0 001.072 0L21 7" />
+  </svg>
+);
+
 export default function Footer() {
   const t = useTranslations();
+  const partnerLogos = [
+    {
+      src: "/purkynka.png",
+      alt: t("footer.partners.purkynka"),
+    },
+    {
+      src: "/kyndryl.png",
+      alt: t("footer.partners.kyndryl"),
+    },
+    {
+      src: "/JA.png",
+      alt: t("footer.partners.ja"),
+    },
+    {
+      src: "/plantid.png",
+      alt: t("footer.partners.plantid"),
+      offsetClass: "-translate-y-3.5 sm:-translate-y-[12px]",
+    },
+  ];
 
   return (
     <footer className="w-full">
       <div className="mx-auto w-full max-w-[1600px] px-6 sm:px-10 md:px-16 lg:px-24">
-        <div className="grid grid-cols-2 gap-6 py-10 sm:grid-cols-3 md:flex md:flex-wrap md:items-center md:justify-center md:gap-10 lg:gap-12">
-          <Image
-            src="/purkynka.png"
-            alt={t("footer.partners.purkynka")}
-            width={200}
-            height={60}
-            className="mx-auto h-12 w-auto object-contain sm:h-14 md:h-16 lg:h-[4.5rem]"
-            priority
-          />
-          <Image
-            src="/kyndryl.png"
-            alt={t("footer.partners.kyndryl")}
-            width={200}
-            height={60}
-            className="mx-auto h-12 w-auto object-contain sm:h-14 md:h-16 lg:h-[4.5rem]"
-          />
-          <Image
-            src="/JA.png"
-            alt={t("footer.partners.ja")}
-            width={200}
-            height={60}
-            className="mx-auto h-12 w-auto object-contain sm:h-14 md:h-16 lg:h-[4.5rem]"
-          />
-          <Image
-            src="/plantid.png"
-            alt={t("footer.partners.plantid")}
-            width={200}
-            height={60}
-            className="mx-auto h-12 w-auto object-contain sm:h-14 md:h-16 lg:h-[4.5rem]"
-          />
+        <div className="grid grid-cols-2 gap-12 py-10 sm:grid-cols-3 md:flex md:flex-wrap md:items-center md:justify-center md:gap-24 lg:gap-32">
+          {partnerLogos.map(({ src, alt, offsetClass }) => (
+            <div
+              key={src}
+              className="flex h-16 items-center justify-center sm:h-20 md:h-24 lg:h-[4.5rem]"
+            >
+              <Image
+                src={src}
+                alt={alt}
+                width={200}
+                height={60}
+                className={`max-h-full w-auto object-contain ${offsetClass ?? ""}`}
+                priority={src === "/purkynka.png"}
+              />
+            </div>
+          ))}
         </div>
         <div className="h-[2px] bg-black" />
       </div>
 
       <div className="mt-12 bg-[#184D44]">
-        <div className="mx-auto w-full max-w-[1600px] px-6 sm:px-10 md:px-16 lg:px-24 py-16 md:py-20">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
-            <div className="md:col-span-2">
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                {t("footer.cta_title")}
-              </h3>
-              <p className="text-emerald-100/80 text-base md:text-lg max-w-xl">
+        <div className="mx-auto w-full max-w-[1600px] px-6 sm:px-10 md:px-16 lg:px-24 pt-16 pb-12 md:pb-16">
+          <div className="flex flex-col gap-12 md:flex-row md:items-start md:justify-between md:gap-16">
+            <div className="max-w-2xl space-y-4">
+              <Image
+                src="/Plantiful.svg"
+                alt={t("footer.logo_alt")}
+                width={150}
+                height={40}
+                className="h-8 w-auto md:h-10"
+                priority
+              />
+              <p className="text-emerald-100/85 text-base md:text-lg max-w-xl">
                 {t("footer.cta_description")}
               </p>
             </div>
 
-            <div className="space-y-4">
-              <h4 className="text-sm font-semibold tracking-wider uppercase text-emerald-300">
+            <div className="space-y-4 md:min-w-[220px]">
+              <h4 className="text-sm font-semibold tracking-wider uppercase text-white">
                 {t("footer.contact_title")}
               </h4>
-              <div className="space-y-2 text-emerald-100/90">
+              <div className="space-y-3 text-emerald-100/85">
                 <a
                   href="https://instagram.com/plantiful.cz"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block hover:text-white transition-colors"
+                  className="flex items-center gap-3 hover:text-emerald-100 transition-colors"
                 >
+                  <InstagramIcon className="h-5 w-5" />
                   {t("footer.instagram")}
                 </a>
                 <a
                   href="mailto:info@plantiful.cz"
-                  className="block hover:text-white transition-colors"
+                  className="flex items-center gap-3 hover:text-emerald-100 transition-colors"
                 >
+                  <MailIcon className="h-5 w-5" />
                   {t("footer.email")}
                 </a>
               </div>
             </div>
           </div>
 
-          <div className="mt-16 pt-8 border-t border-emerald-800/50">
+          <div className="mt-12 pt-6 pb-2 border-t border-emerald-800/50">
             <p className="text-center text-sm text-emerald-100/60">
               {t("footer.copyright")}
             </p>

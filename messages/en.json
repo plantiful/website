@@ -16,8 +16,37 @@
     "subtitle": "Especially if you're struggling with plants.",
     "phones_alt": "Plantiful app screens on phones"
   },
+  "appAccess": {
+    "title": "See the Plantiful App in Action",
+    "title_accent": "",
+    "subtitle": "The mobile app is open-source and currently distributed outside the app stores. Here's how you can explore it today.",
+    "steps": {
+      "scan": {
+        "title": "Scan any plant with Plant.ID",
+        "description": "Use the camera flow to identify species instantly and grab care insights powered by Plant.ID."
+      },
+      "organize": {
+        "title": "Add it to your Plantiful library",
+        "description": "Drop the plant into shared collections, attach photos, and log its current health."
+      },
+      "care": {
+        "title": "Let smart routines take over",
+        "description": "Plantiful schedules watering, repotting, and reminders so your team stays in sync."
+      }
+    },
+    "info_title": "How to access the app",
+    "info_description": "We're polishing compliance for the App Store and Google Play. Until the listings go live you can run Plantiful from the open-source code or ask us for a compiled demo.",
+    "buttons": {
+      "github": "Explore the app repo",
+      "contact": "Request a demo build"
+    },
+    "step_label": "Step",
+    "gallery": {
+      "primary_alt": "Plantiful app screen showing a personalized care plan for a Monstera"
+    }
+  },
   "teamMessage": {
-    "title": "Word From Our Team",
+    "title": "A Word From Our Team",
     "title_accent": "Team",
     "description": "Plantiful started as a high school experiment and grew thanks to mentors, partners, and the community that walked with us. As we move on to new adventures, we've wrapped up our work and open-sourced the product, docs, and design system so anyone can continue the journey.\n\nThank you for growing Plantiful with us — Robin Jarusek, Karol Raffay, Valon Mavriqi, Jan Trunecek.",
     "image_alt": "Plantiful team photo in a phone mockup"
@@ -34,6 +63,7 @@
       "kyndryl_challenge_stage": "Plantiful pitching on stage at the Kyndryl Challenge finals",
       "kyndryl_challenge_pitch": "Mentors reviewing the Plantiful prototype during the Kyndryl Challenge",
       "kyndryl_product": "Screens from the Plantiful beta built during the Kyndryl internship",
+      "kyndryl_intern": "Plantiful team collaborating during the Kyndryl internship",
       "ja_expo_booth": "Plantiful booth attracting visitors at JA Expo",
       "ja_expo_team": "Plantiful team holding awards at JA Expo",
       "fekt_stage": "Presenting our research at the FEKT EEICT conference",
@@ -169,6 +199,7 @@
     }
   },
   "footer": {
+    "logo_alt": "Plantiful wordmark logo",
     "partners": {
       "purkynka": "Purkynka",
       "kyndryl": "Kyndryl",

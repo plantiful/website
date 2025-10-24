@@ -103,9 +103,15 @@ export const getTimelineData = (t: TranslationFunction) => [
             fill: true,
             sizes: imageSizes,
           },
+          {
+            src: "/timeline/kyndryl_intern.JPG",
+            alt: t("timeline.gallery.kyndryl_intern"),
+            fill: true,
+            sizes: imageSizes,
+          },
         ]}
         links={getLinks(t, "timeline.kyndryl.links")}
-        mediaColumns={1}
+        mediaColumns={2}
       />
     ),
   },

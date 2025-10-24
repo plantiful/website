@@ -12,6 +12,7 @@ import {
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { Timeline } from "@/components/ui/timeline";
 import { HeroVideoDialog } from "@/components/ui/hero-video-dialog";
+import { TeamSignatures } from "@/components/TeamSignatures";
 import { getTimelineData } from "@/data/timelineData";
 import { cn } from "@/lib/utils";
 import type Lenis from "lenis";
@@ -95,7 +96,6 @@ export default function Home() {
   const introTitle = t("intro.title");
   const introTitleAccent = t("intro.title_accent");
   const teamMessageTitle = t("teamMessage.title");
-  const teamMessageTitleAccent = t("teamMessage.title_accent");
   const handleJourneyClick = useCallback<MouseEventHandler<HTMLAnchorElement>>((event) => {
     if (
       event.defaultPrevented ||
@@ -173,6 +173,35 @@ export default function Home() {
       </a>
     </>
   );
+
+  const appAccessTitle = t("appAccess.title");
+  const appAccessInfoTitle = t("appAccess.info_title");
+  const appAccessInfoDescription = t("appAccess.info_description");
+  const appRepoUrl = "https://github.com/plantiful/app";
+  const contactEmail = "info@plantiful.cz";
+  const contactMailto = `mailto:${contactEmail}?subject=Plantiful%20demo%20request`;
+  const appAccessButtons = {
+    github: t("appAccess.buttons.github"),
+    contact: t("appAccess.buttons.contact"),
+  };
+  const introSteps = [
+    {
+      index: "1",
+      title: t("appAccess.steps.scan.title"),
+      description: t("appAccess.steps.scan.description"),
+    },
+    {
+      index: "2",
+      title: t("appAccess.steps.organize.title"),
+      description: t("appAccess.steps.organize.description"),
+    },
+    {
+      index: "3",
+      title: t("appAccess.steps.care.title"),
+      description: t("appAccess.steps.care.description"),
+    },
+  ];
+  const appGalleryAlt = t("appAccess.gallery.primary_alt");
 
   return (
     <main className="relative w-full bg-white">
@@ -278,7 +307,7 @@ export default function Home() {
             alt={t("common.decorative_alt")}
             width={1024}
             height={1024}
-            className="opacity-100 right-0 top-[10rem] translate-x-[40%] sm:top-[12rem] sm:translate-x-[45%] md:top-[14rem] md:translate-x-[48%] lg:top-[16rem] lg:translate-x-[52%]"
+            className="opacity-100 right-0 top-[10rem] translate-x-[40%] sm:top-[12rem] sm:translate-x-[45%] md:top-[14rem] md:translate-x-[48%] lg:top-[16rem] lg:translate-x-[60%]"
             style={{
               width: "min(calc(100% * 0.6), 38rem)",
             }}
@@ -327,7 +356,60 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Timeline section (Aceternity UI demo with artifacts handled inside) */}
+      {/* App access section */}
+      <section className="relative z-10 w-full bg-white overflow-hidden py-24">
+        <div className="mx-auto w-full max-w-[1600px] px-6 sm:px-10 md:px-16 lg:px-24">
+          <div className="flex flex-col items-center text-center">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.02] tracking-[-0.01em] text-neutral-900 dark:text-white max-w-4xl">
+              {appAccessTitle}
+            </h2>
+            <div className="mt-3 h-1.5 w-24 bg-emerald-800 rounded" />
+          </div>
+
+          <div className="mt-16 grid items-center justify-items-center gap-y-0 gap-x-1 md:gap-x-2 lg:gap-x-3 md:grid-cols-[1.05fr_0.95fr]">
+            <div className="max-w-[640px] w-full">
+              <div className="relative mt-12">
+                <div className="absolute left-7 top-[3.35rem] bottom-[3.35rem] w-[3px] bg-emerald-500/30" />
+                <div className="flex flex-col gap-12">
+                  {introSteps.map((step, idx) => (
+                    <div key={step.title} className="relative pl-20">
+                      <div className="absolute left-[0.4rem] top-1/2 -translate-y-1/2 flex h-12 w-12 items-center justify-center">
+                        <div className="relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-emerald-600 text-sm font-semibold text-white shadow-[0_12px_25px_rgba(12,83,56,0.28)]">
+                          <span>{step.index}</span>
+                          <div className="pointer-events-none absolute -bottom-5 left-1/2 h-6 w-6 -translate-x-1/2 rotate-45 rounded-[6px] bg-emerald-400/35" />
+                        </div>
+                      </div>
+                      <div className="rounded-[2rem] bg-white px-6 py-6 shadow-[0_20px_45px_rgba(15,23,42,0.08)] ring-1 ring-emerald-600/10">
+                        <h3 className="mt-3 text-xl font-semibold text-neutral-900">
+                          {step.title}
+                        </h3>
+                        <p className="mt-3 text-base text-neutral-700">
+                          {step.description}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="flex justify-center md:justify-center">
+              <div className="overflow-hidden rounded-[2.5rem] border border-neutral-200 bg-white shadow-[0_25px_60px_rgba(15,23,42,0.12)] w-full max-w-[280px] sm:max-w-[320px] md:max-w-[340px] lg:max-w-[360px]">
+                <Image
+                  src="/timeline/real_app.png"
+                  alt={appGalleryAlt}
+                  width={1000}
+                  height={2092}
+                  className="h-auto w-full"
+                  sizes="(min-width: 1280px) 360px, (min-width: 768px) 320px, 70vw"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Timeline section */}
       <section
         id="journey"
         className="relative z-10 w-full bg-white dark:bg-neutral-950"
@@ -363,7 +445,7 @@ export default function Home() {
             alt={t("common.decorative_alt")}
             width={1024}
             height={1024}
-            className="z-0 right-0 top-[10rem] translate-x-[48%] sm:top-[12rem] sm:translate-x-[50%] md:top-[14rem] md:translate-x-[52%]"
+            className="z-0 right-0 top-[26rem] translate-x-[48%] sm:top-[28rem] sm:translate-x-[50%] md:top-[30rem] md:translate-x-[52%]"
             style={{
               width: "min(calc(100% * 0.68), 42rem)",
             }}
@@ -440,7 +522,7 @@ export default function Home() {
             alt={t("common.decorative_alt")}
             width={1024}
             height={1024}
-            className="rotate-45 opacity-100 left-0 top-[-8rem] -translate-x-[52%] sm:top-[-10rem] sm:-translate-x-[54%] lg:top-[-12rem] lg:-translate-x-[56%]"
+            className="rotate-30 opacity-100 left-0 top-[-8rem] -translate-x-[32%] sm:top-[-10rem] sm:-translate-x-[54%] lg:top-[-rem] lg:-translate-x-[70%]"
             style={{
               width: "min(calc(100% * 0.7), 44rem)",
             }}
@@ -450,33 +532,19 @@ export default function Home() {
             alt={t("common.decorative_alt")}
             width={1024}
             height={1024}
-            className="opacity-100 right-0 bottom-[-2rem] translate-x-[48%] sm:bottom-[-3rem] sm:translate-x-[50%] lg:bottom-[-4rem] lg:translate-x-[52%]"
+            className="opacity-100 right-0 bottom-[-2rem] translate-x-[48%] sm:bottom-[-3rem] sm:translate-x-[50%] lg:bottom-[-4rem] lg:translate-x-[70%]"
             style={{
               width: "min(calc(100% * 0.68), 42rem)",
             }}
           />
         </ArtifactLayer>
 
-        <div className="relative mx-auto flex w-full max-w-[1400px] flex-col items-center gap-10 px-6 sm:px-10 md:px-16 lg:px-24">
-          <div className="text-center max-w-4xl">
+        <div className="relative mx-auto flex w-full max-w-[1400px] flex-col items-center gap-5 sm:gap-7 lg:gap-7 px-6 sm:px-10 md:px-16 lg:px-24">
+          <div className="text-center max-w-4xl flex flex-col items-center">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.02] tracking-[-0.01em] text-neutral-900">
-              {teamMessageTitleAccent && teamMessageTitle.includes(teamMessageTitleAccent)
-                ? (
-                  <>
-                    {teamMessageTitle.slice(
-                      0,
-                      teamMessageTitle.indexOf(teamMessageTitleAccent),
-                    )}
-                    <span className="text-emerald-800">{teamMessageTitleAccent}</span>
-                    {teamMessageTitle.slice(
-                      teamMessageTitle.indexOf(teamMessageTitleAccent) +
-                        teamMessageTitleAccent.length,
-                    )}
-                  </>
-                )
-                : teamMessageTitle}
+              {teamMessageTitle}
             </h2>
-            <div className="mx-auto mt-3 h-1.5 w-24 bg-emerald-800 rounded" />
+            <div className="mt-3 h-1.5 w-24 bg-emerald-800 rounded" />
           </div>
 
           <Image
@@ -492,24 +560,36 @@ export default function Home() {
           <div className="max-w-[820px] text-center">
             {t("teamMessage.description")
               .split("\n\n")
-              .map((paragraph, idx) => (
-                <p
-                  key={idx}
-                  className={`text-lg md:text-xl text-neutral-700 ${
-                    idx === 0 ? "mt-8" : "mt-6"
-                  }`}
-                >
-                  {paragraph}
-                </p>
-              ))}
+              .map((paragraph, idx) => {
+                const trimmedParagraph = paragraph.trim();
+                const isClosingParagraph =
+                  trimmedParagraph.startsWith("Thank you") ||
+                  trimmedParagraph.startsWith("Děkujeme");
+
+                return (
+                  <p
+                    key={idx}
+                    className="text-lg md:text-xl text-neutral-700 mt-3 sm:mt-4 md:mt-5"
+                  >
+                    {isClosingParagraph ? (
+                      <strong className="font-semibold text-neutral-800">
+                        {trimmedParagraph}
+                      </strong>
+                    ) : (
+                      trimmedParagraph
+                    )}
+                  </p>
+                );
+              })}
           </div>
+
         </div>
       </section>
 
       {/* Acknowledgements section */}
       <section
         id="acknowledgements"
-        className="relative w-full bg-white overflow-hidden py-20"
+        className="relative w-full bg-white overflow-hidden pt-16 pb-20"
       >
         {/* background accents */}
         <ArtifactLayer maxWidth="1400px">
@@ -518,24 +598,25 @@ export default function Home() {
             alt={t("common.decorative_alt")}
             width={1024}
             height={1024}
-            className="rotate-45 opacity-100 left-0 top-[-8rem] -translate-x-[52%] sm:top-[-10rem] sm:-translate-x-[54%] lg:top-[-12rem] lg:-translate-x-[56%]"
+            className="rotate-0 opacity-100 left-0 top-[-8rem] -translate-x-[52%] sm:top-[-10rem] sm:-translate-x-[54%] lg:top-[15rem] lg:-translate-x-[73%]"
             style={{
               width: "min(calc(100% * 0.7), 44rem)",
             }}
           />
           <BackgroundArtifact
-            src="/big_bg_artifact.svg"
+            src="/bg_artifact.svg"
             alt={t("common.decorative_alt")}
-            width={1024}
-            height={1024}
-            className="opacity-100 right-0 bottom-[-2rem] translate-x-[48%] sm:bottom-[-3rem] sm:translate-x-[50%] lg:bottom-[-4rem] lg:translate-x-[52%]"
+            width={352}
+            height={194}
+            className="opacity-100 right-0 bottom-[-6rem] translate-x-[48%] sm:bottom-[-3rem] sm:translate-x-[50%] lg:bottom-[20rem] lg:translate-x-[90%]"
             style={{
               width: "min(calc(100% * 0.68), 42rem)",
             }}
           />
+
         </ArtifactLayer>
 
-        <div className="relative mx-auto flex w-full max-w-[1400px] flex-col items-center gap-10 px-6 sm:px-10 md:px-16 lg:px-24">
+        <div className="relative mx-auto flex w-full max-w-[1400px] flex-col items-center gap-0 px-6 sm:px-10 md:px-16 lg:px-24">
           <div className="text-center max-w-4xl">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.02] tracking-[-0.01em] text-neutral-900">
               {t("acks.title")}
@@ -546,27 +627,40 @@ export default function Home() {
           <Image
             src="/handshake.svg"
             alt={t("acks.image_alt")}
-            width={540}
-            height={359}
+            width={480}
+            height={320}
             priority
-            className="w-full max-w-[540px] h-auto drop-shadow-2xl"
-            sizes="(min-width: 1024px) 540px, 80vw"
+            className="w-full max-w-[460px] h-auto drop-shadow-2xl"
+            sizes="(min-width: 1024px) 460px, 75vw"
           />
 
           <div className="max-w-[820px] text-center">
             {t("acks.description")
               .split("\n\n")
-              .map((paragraph, idx) => (
-                <p
-                  key={idx}
-                  className={`text-lg md:text-xl text-neutral-700 ${
-                    idx === 0 ? "mt-8" : "mt-6"
-                  }`}
-                >
-                  {paragraph}
-                </p>
-              ))}
+              .map((paragraph, idx) => {
+                const trimmedParagraph = paragraph.trim();
+                const isClosingParagraph = trimmedParagraph.startsWith("Thank you") || trimmedParagraph.startsWith("Děkujeme");
+
+                return (
+                  <p
+                    key={idx}
+                    className={`text-lg md:text-xl text-neutral-700 ${
+                      idx === 0 ? "mt-8" : "mt-6"
+                    }`}
+                  >
+                    {isClosingParagraph ? (
+                      <strong className="font-semibold text-neutral-800">
+                        {trimmedParagraph}
+                      </strong>
+                    ) : (
+                      trimmedParagraph
+                    )}
+                  </p>
+                );
+              })}
           </div>
+
+          <TeamSignatures className="-mt-6 sm:mt-10 max-w-[900px]" />
         </div>
       </section>
     </main>

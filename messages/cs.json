@@ -13,27 +13,56 @@
   "intro": {
     "title": "Představujeme ti aplikaci Plantiful",
     "title_accent": "Plantiful",
-    "subtitle": "Právě pokud jsi s rostlinami v bezsnázích.",
+    "subtitle": "Právě pokud jsi s rostlinami v nesnázích.",
     "phones_alt": "Obrazovky aplikace Plantiful na telefonech"
   },
+  "appAccess": {
+    "title": "Postaráme se o tvoje rostliny",
+    "title_accent": "",
+    "steps": {
+      "scan": {
+        "title": "Naskenuj rostlinu pomocí své kamery",
+        "description": "Okamžitě identifikujeme rostlinu za pomocí Plant.ID API."
+      },
+      "organize": {
+        "title": "Přidej ji do své Plantiful knihovny",
+        "description": "Zařaď rostlinu do správného pokoje, přidej k ní fotku, pojmenuj ji a zaznamenej její aktuální stav."
+      },
+      "care": {
+        "title": "O zbytek se postaráme my!",
+        "description": "Plantiful naplánuje zalévací cyklus a chytré připomínky, abys zůstal v obraze."
+      }
+    },
+    "info_title": "Jak se k aplikaci dostat",
+    "info_description": "Mobilní aplikaci Plantiful zatím nenajdete v App Store ani na Google Play. Díky open-source kódu si ji ale můžeš vyzkoušet už dnes. Do té doby můžeš Plantiful spustit přímo z open-source kódu nebo nám napsat o připravené demo.",
+    "buttons": {
+      "github": "Prozkoumej repozitář",
+      "contact": "Napiš si o demo"
+    },
+    "step_label": "Krok",
+    "gallery": {
+      "primary_alt": "Obrazovka aplikace Plantiful s plánem péče pro monsteru"
+    }
+  },
   "teamMessage": {
-    "title": "Slovo Od Našeho Týmu",
-    "title_accent": "Týmu",
-    "description": "Plantiful začalo jako středoškolský experiment a rostlo díky mentorům, partnerům a komunitě, která stála po našem boku. Jak se posouváme k novým výzvám, uzavřeli jsme naši práci a vydali produkt, dokumentaci i design systém jako open source, aby mohl kdokoli pokračovat v naší cestě.\n\nDěkujeme, že jste nám pomohli Plantiful rozkvést — Robin Jarusek, Karol Raffay, Valon Mavriqi, Jan Trunecek.",
+    "title": "Slovo od našeho týmu",
+    "title_accent": "týmu",
+    "description": "Plantiful vzniklo jako středoškolský experiment, ze kterého vykvetlo něco mnohem většího. [uzavreni]...Ale všechno dobré jednou končí, uzavřeli jsme naši práci a vydali produkt, dokumentaci i design systém jako open source, aby mohl kdokoli pokračovat v naší cestě.\n\nMobilní aplikaci Plantiful zatím nenajdete v App Store ani na Google Play. Díky open-source kódu si ji ale můžeš vyzkoušet už dnes, nebo nám napsat o připravené demo.",
     "image_alt": "Fotografie týmu Plantiful v telefoním mockupu"
   },
   "acks": {
     "title": "Poděkování",
-    "description": "Jsme nesmírně vděční mentorům z RedHat Summer Campu, společnosti Kyndryl, JA Czech, Střední škole Purkyňova a JICu, kteří nám dali prostor experimentovat, trpělivě sdíleli své zkušenosti a věřili, že Plantiful může skutečně pomáhat lidem. Jejich vedení nás motivovalo k rychlejším iteracím, odvážným prototypům a neustálému zvyšování laťky uživatelského zážitku.\n\nPoděkování patří také komunitám, partnerům, rodinám a prvním uživatelům, kteří nám poskytovali zpětnou vazbu, testovali nehotové verze a slavili s námi každou dosaženou metu. Vaše důvěra z této cesty dělá víc než jen školní projekt — pomáhá nám růst.",
+    "description": "Jsme nesmírně vděční mentorům z RedHat Summer Campu, Kačce a Janě z Kyndrylu, Tomáši Cahovi a Lence Hruškové ze Střední školy Purkyňova, Brno, Liboru Hořenímu z JICu a také porotcům z JA Czech a všem ostatním, kteří nám dali prostor experimentovat, trpělivě sdíleli své zkušenosti a věřili, že Plantiful může skutečně pomáhat lidem.\n\nDěkujeme, že jste nám pomohli Plantiful rozkvést.",
     "image_alt": "Ilustrace podaných rukou symbolizující spolupráci"
   },
   "timeline": {
-    "title": "Naše Cesta",
+    "title": "Naše cesta",
     "gallery": {
       "summercamp": "Tým Plantiful slaví vítězství na Red Hat Summer Camp 2022",
       "kyndryl_challenge_stage": "Plantiful prezentuje na finále Kyndryl Challenge",
       "kyndryl_challenge_pitch": "Mentorům ukazujeme prototyp Plantiful během Kyndryl Challenge",
       "kyndryl_product": "Obrazovky bety Plantiful vytvořené během stáže v Kyndrylu",
+      "kyndryl_intern": "Tým Plantiful spolupracuje během stáže v Kyndrylu",
       "ja_expo_booth": "Stánek Plantiful na veletrhu JA Expo",
       "ja_expo_team": "Tým Plantiful s oceněními na JA Expo",
       "fekt_stage": "Prezentace výzkumu Plantiful na konferenci FEKT EEICT",
@@ -43,10 +72,10 @@
     },
     "foreword": {
       "title": "RedHat Summer Camp",
-      "description": "Plantiful vzniklo během Red Hat Summer Campu 2022, kde nás týden produktových workshopů donutil ověřit problém, navrhnout první flow a obhájit projekt před mentory.\n\nBěhem pár hodin jsme vyladili příběh, prezentaci i první rozhraní. Konkurence byla silná, ale i tak jsme zvítězili a uvěřili, že má projekt budoucnost.",
+      "description": "Plantiful vzniklo na RedHat Summer Campu 2022, kde jsme prošli různými workshopy a následně vytvářeli finální projekt za pomocí všeho, co jsme se naučili. V průběhu pár hodin jsme si ujasnili nápad, prezentaci a řeč. Konkurence byla silná, ale i tak se nám podařilo vyhrát.",
       "highlights": [
-        "Sestavili jsme zakládající tým Plantiful a během 48 hodin ověřili koncept.",
-        "Vyhráli jsme finále Red Hat Summer Campu a získali další mentoring."
+        "Během 48 hodin jsme utvořili vizi pro Plantiful a s pomocí mentorů jsme postavili MVP",
+        "Odprezentovali jsme náš nápad a vyhráli nejlepší projekt na Red Hat Summer Campu."
       ],
       "links": [
         {
@@ -59,9 +88,9 @@
     },
     "kyndryl_challenge": {
       "title": "Kyndryl Challenge",
-      "description": "Na vítězství z Red Hatu navázala celostátní soutěž Kyndryl Challenge. S produktovými mentory jsme z prezentace udělali roadmapu, testovali nápady s malými zahradnictvími a dodali první funkční MVP.\n\nVýhra nám otevřela stáž, během které jsme mohli Plantiful stavět dál po boku profesionálů.",
+      "description": "Výhra v RedHatu nás namotivovala v nápadu pokračovat dál a přihlásili jsme se do Kyndryl Challenge, kde jsme znova prošli řadou užitečných workshopů. Zaměřili jsme se na naše cílové publikum, zkompletovali projektový nápad a ještě k němu mnohé přidali. Porotcům z Kyndrylu se náš nápad velice líbil a společně s jíným týmem jsme vyhráli. Byla nám nabídnuta stáž na rok a začali jsme vytvářet aplikaci.",
       "highlights": [
-        "Postavili jsme první multiplatformní MVP s mentory z Kyndrylu.",
+        "Představili jsme porotcům vizi naší aplikace.",
         "V soutěži jsme zvítězili a získali nabídku stáže."
       ],
       "links": [
@@ -81,10 +110,10 @@
     },
     "kyndryl": {
       "title": "Stáž v Kyndrylu",
-      "description": "Během stáže v Kyndrylu jsme prototyp přepsali do produkčních nástrojů, automatizovali doporučení péče a navrhli integrace pro partnerská zahradnictví.\n\nZískali jsme zkušenost, jak kombinovat průběžný výzkum s pravidelným releasem vyladěné mobilní aplikace.",
+      "description": "Během roční stáže v Kyndrylu jsme prototyp pomalu přeměnili v realitu. Přibrali jsme do týmu opravdového grafika, Honzu Trunečka, který hrál klíčovou roli ve vytváření designové identity našeho projektu. Navrhli jsme finální design a funkce aplikace. Pracovali jsme v týmu, chystali se na další soutěže, přitom vyvíjeli aplikaci a konzultovali vše s naší projektovou manažerkou z Kyndrylu.",
       "highlights": [
-        "Automatizovali jsme plány péče pro 150+ rostlin z reálných dat zahradnictví.",
-        "Navrhli jsme cloudovou architekturu, která škáluje k partnerským skleníkům."
+        "Navrhli jsme finální design a funkce aplikace. ",
+        "Pracovali jsme v týmu, chystali se na další soutěže, přitom vyvíjeli aplikaci."
       ],
       "links": [
         {
@@ -103,10 +132,10 @@
     },
     "ja_expo": {
       "title": "JA Expo",
-      "description": "Plantiful jsme přivezli na JA Expo, abychom aplikaci otestovali s tisíci návštěvníky a získali zpětnou vazbu na fyzické prototypy.\n\nPrezentace na pódiu nám pomohla vyladit příběh a veletrh přivedl nové partnery do pilotu.",
+      "description": "Technickou stránku aplikace jsme již měli ověřenou a aktivně na ní pracovali. Na poslední chvíli jsme ale dostali pozvánku na JA EXPO, během měsíce jsme museli vypracovat výroční zprávu, business model a způsob monetizace. Naši aplikaci jsme potom mohli v Praze, v Galerii Harfa odprezentovat před tisíci návštěvníky a získali zpětnou vazbu nejed on nich, ale i porotců různých kategorií.\n\nVyhráli jsme kategorii Best Business Pitch a umístili se na druhém místě v nejlepší STEM projekt.",
       "highlights": [
         "Získali jsme zpětnou vazbu od více než 2 000 návštěvníků během živých ukázek.",
-        "Přímo na místě jsme domluvili nové beta testery i marketplace partnery."
+        "Postoupil jsme do finále mezi TOP10 firem výhrou v kategorii Best Business Pitch."
       ],
       "links": [
         {
@@ -169,6 +198,7 @@
     }
   },
   "footer": {
+    "logo_alt": "Logo Plantiful",
     "partners": {
       "purkynka": "Purkynka",
       "kyndryl": "Kyndryl",
@@ -176,10 +206,10 @@
       "plantid": "PlantID"
     },
     "cta_title": "Plantiful",
-    "cta_description": "Spojte se s námi a dozvíte se více o Plantiful a jak pomáháme milovníkům rostlin pečovat o jejich zelené společníky.",
+    "cta_description": "Protože nám na rostlinách záleží.",
     "contact_title": "Kontakt",
-    "instagram": "Instagram: plantiful.cz",
-    "email": "Email: info@plantiful.cz",
+    "instagram": "plantiful.cz",
+    "email": "info@plantiful.cz",
     "copyright": "© 2025 Plantiful"
   },
   "common": {
