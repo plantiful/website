@@ -31,7 +31,7 @@ export default function LanguageSwitcher() {
         aria-expanded={isOpen}
         aria-haspopup="true"
       >
-        <img src={currentLanguage.flagUrl} alt="" className="w-5 h-4 object-cover rounded-sm" />
+        <img src={currentLanguage.flagUrl} alt="" className="w-5 h-4 object-cover rounded-none" />
         <span className="text-white/90 font-medium text-sm">{currentLanguage.code.toUpperCase()}</span>
         <svg
           className={`w-4 h-4 text-white/70 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
@@ -63,7 +63,7 @@ export default function LanguageSwitcher() {
                 }`}
                 aria-current={currentLocale === lang.code ? 'true' : undefined}
               >
-                <img src={lang.flagUrl} alt="" className="w-6 h-4 object-cover rounded-sm" />
+                <img src={lang.flagUrl} alt="" className="w-6 h-4 object-cover rounded-none" />
                 <div className="flex flex-col">
                   <span className="text-white font-medium text-sm drop-shadow-sm">{lang.name}</span>
                   <span className="text-white/70 text-xs">{lang.code.toUpperCase()}</span>

@@ -154,7 +154,7 @@ export default function Home() {
       <a
         href="#journey"
         onClick={handleJourneyClick}
-        className="inline-flex flex-1 items-center justify-center gap-3 px-4 py-2.5 text-sm md:flex-none md:px-6 md:py-3 md:text-base bg-[#184D44] hover:bg-[#143d36] text-white font-semibold rounded-lg transition-colors shadow-lg"
+        className="inline-flex flex-1 items-center justify-center gap-3 px-4 py-2.5 text-sm md:flex-none md:px-6 md:py-3 md:text-base bg-white text-[#184D44] font-semibold rounded-lg transition-colors shadow-lg border border-[#184D44]/15 hover:bg-white/90 hover:text-[#0f352d]"
       >
         {t("hero.journey_button")}
         <svg
@@ -305,7 +305,7 @@ export default function Home() {
             alt={t("common.decorative_alt")}
             width={1024}
             height={1024}
-            className="rotate-90 opacity-100 left-0 top-[-12rem] -translate-x-[45%] sm:top-[-16rem] sm:-translate-x-[50%] md:top-[-20rem] md:-translate-x-[52%] lg:top-[-22rem] lg:-translate-x-[55%]"
+            className="rotate-90 opacity-100 left-0 top-[-10rem] -translate-x-[35%] sm:top-[16rem] sm:-translate-x-[50%] md:top-[-10rem] md:-translate-x-[52%] lg:top-[-22rem] lg:-translate-x-[55%]"
             style={{
               width: "min(calc(100% * 0.7), 42rem)",
             }}
@@ -315,7 +315,7 @@ export default function Home() {
             alt={t("common.decorative_alt")}
             width={1024}
             height={1024}
-            className="opacity-100 right-0 top-[10rem] translate-x-[40%] sm:top-[12rem] sm:translate-x-[45%] md:top-[14rem] md:translate-x-[48%] lg:top-[16rem] lg:translate-x-[60%]"
+            className="opacity-100 right-0 top-[35rem] translate-x-[50%] sm:top-[12rem] sm:translate-x-[45%] md:top-[14rem] md:translate-x-[48%] lg:top-[16rem] lg:translate-x-[60%]"
             style={{
               width: "min(calc(100% * 0.6), 38rem)",
             }}
@@ -354,10 +354,10 @@ export default function Home() {
           <div className="relative flex justify-center md:justify-end md:-ml-24 lg:-ml-34">
             {/* Phone showcase */}
             <Image
-              src="/PhoneShowcase.svg"
+              src="/PhoneShowcase.png"
               alt={t("intro.phones_alt")}
-              width={800}
-              height={600}
+              width={1600}
+              height={1200}
               className="w-full max-w-[620px] sm:max-w-[820px] md:max-w-[920px] lg:max-w-[1000px] h-auto drop-shadow-xl"
             />
           </div>
@@ -481,7 +481,7 @@ export default function Home() {
             alt={t("common.decorative_alt")}
             width={1024}
             height={1024}
-            className="z-0 right-0 top-[26rem] translate-x-[48%] sm:top-[28rem] sm:translate-x-[50%] md:top-[30rem] md:translate-x-[52%]"
+            className="z-0 right-0 rotate-30 top-[26rem] translate-x-[58%] sm:top-[28rem] sm:translate-x-[50%] md:top-[30rem] md:translate-x-[52%]"
             style={{
               width: "min(calc(100% * 0.68), 42rem)",
             }}
@@ -558,7 +558,7 @@ export default function Home() {
             alt={t("common.decorative_alt")}
             width={1024}
             height={1024}
-            className="rotate-30 opacity-100 left-0 top-[-8rem] -translate-x-[32%] sm:top-[-10rem] sm:-translate-x-[54%] lg:top-[-rem] lg:-translate-x-[70%]"
+            className="lg:rotate-30 md:rotate-30 rotate-60 opacity-100 left-0 top-[-4rem] -translate-x-[65%] sm:top-[-10rem] sm:-translate-x-[54%] lg:top-[-rem] lg:-translate-x-[70%]"
             style={{
               width: "min(calc(100% * 0.7), 44rem)",
             }}
@@ -568,7 +568,7 @@ export default function Home() {
             alt={t("common.decorative_alt")}
             width={1024}
             height={1024}
-            className="opacity-100 right-0 bottom-[-2rem] translate-x-[48%] sm:bottom-[-3rem] sm:translate-x-[50%] lg:bottom-[-4rem] lg:translate-x-[70%]"
+            className="opacity-100 right-0 rotate-70 sm:rotate-0 md:rotate-0 lg:rotate-0 bottom-[-4rem] translate-x-[50%] sm:bottom-[-3rem] sm:translate-x-[50%] lg:bottom-[-4rem] lg:translate-x-[70%]"
             style={{
               width: "min(calc(100% * 0.68), 42rem)",
             }}
@@ -634,7 +634,7 @@ export default function Home() {
             alt={t("common.decorative_alt")}
             width={1024}
             height={1024}
-            className="rotate-0 opacity-100 left-0 top-[-8rem] -translate-x-[52%] sm:top-[-10rem] sm:-translate-x-[54%] lg:top-[15rem] lg:-translate-x-[73%]"
+            className="rotate-30 lg:rotate-0 opacity-100 left-0 top-[-6rem] -translate-x-[52%] sm:top-[-10rem] sm:-translate-x-[54%] lg:top-[15rem] lg:-translate-x-[73%]"
             style={{
               width: "min(calc(100% * 0.7), 44rem)",
             }}
@@ -644,7 +644,7 @@ export default function Home() {
             alt={t("common.decorative_alt")}
             width={352}
             height={194}
-            className="opacity-100 right-0 bottom-[-6rem] translate-x-[48%] sm:bottom-[-3rem] sm:translate-x-[50%] lg:bottom-[20rem] lg:translate-x-[90%]"
+            className="opacity-100 right-0 bottom-[6rem] translate-x-[48%] sm:bottom-[-3rem] sm:translate-x-[50%] lg:bottom-[20rem] lg:translate-x-[90%]"
             style={{
               width: "min(calc(100% * 0.68), 42rem)",
             }}
