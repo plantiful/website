@@ -22,14 +22,20 @@
     "subtitle": "The mobile app is open-source and currently distributed outside the app stores. Here's how you can explore it today.",
     "steps": {
       "scan": {
+        "short_title": "Scan",
+        "mobile_label": "Scan",
         "title": "Scan any plant with Plant.ID",
         "description": "Use the camera flow to identify species instantly and grab care insights powered by Plant.ID."
       },
       "organize": {
+        "short_title": "Add",
+        "mobile_label": "Add",
         "title": "Add it to your Plantiful library",
         "description": "Drop the plant into shared collections, attach photos, and log its current health."
       },
       "care": {
+        "short_title": "Grow",
+        "mobile_label": "Grow",
         "title": "Let smart routines take over",
         "description": "Plantiful schedules watering, repotting, and reminders so your team stays in sync."
       }
@@ -48,12 +54,12 @@
   "teamMessage": {
     "title": "A Word From Our Team",
     "title_accent": "Team",
-    "description": "Plantiful started as a high school experiment and grew thanks to mentors, partners, and the community that walked with us. As we move on to new adventures, we've wrapped up our work and open-sourced the product, docs, and design system so anyone can continue the journey.\n\nThank you for growing Plantiful with us — Robin Jarusek, Karol Raffay, Valon Mavriqi, Jan Trunecek.",
+    "description": "Plantiful began as a high-school experiment that grew into something much bigger. None of us had experience building mobile apps when we started, and we barely knew anything about plants either... We learned everything along the way and we're proud of what we created. Still, every good story wraps up eventually, so we closed this chapter by releasing the product, documentation, and design system as open source for anyone to continue the journey.\n\nYou still won't find Plantiful in the App Store or on Google Play. Thanks to the open-source code you can try it today, or drop us a line for a ready-made demo.",
     "image_alt": "Plantiful team photo in a phone mockup"
   },
   "acks": {
     "title": "Acknowledgement",
-    "description": "We are deeply grateful to our mentors from RedHat Summer Camp, Kyndryl, JA Czech, Purkyňka High School and JIC, who gave us room to experiment, patiently shared their expertise and believed that Plantiful could genuinely help people. Their mentorship encouraged us to iterate faster, prototype new features and keep raising the bar for the experience we deliver.\n\nWe also want to thank the communities, partners, families and early users who shared feedback, tested imperfect builds and celebrated every milestone at our side. Your trust turns this journey into something bigger than a school project — it keeps us growing.",
+    "description": "We're immensely grateful to the mentors from RedHat Summer Camp, Kacka and Irena from Kyndryl, Tomas Caha and Lenka Hruskova from Purkynka High School in Brno, Libor Horeni from JIC, the JA Czech jury, and everyone else who gave us space to experiment, shared their expertise, and believed in our vision.\n\nThank you for helping Plantiful bloom.",
     "image_alt": "Illustration of a handshake symbolising collaboration"
   },
   "timeline": {
@@ -89,9 +95,9 @@
     },
     "kyndryl_challenge": {
       "title": "Kyndryl Challenge",
-      "description": "The momentum from Red Hat carried us to the nationwide Kyndryl Challenge. Together with product mentors we turned the pitch deck into a roadmap, tested ideas with small nurseries and delivered our first working MVP.\n\nWinning the challenge unlocked an internship where we could keep building Plantiful with professionals.",
+      "description": "Our Red Hat win pushed us to apply for the nationwide Kyndryl Challenge, where another round of hands-on workshops waited for us. We doubled down on understanding the target audience, finished shaping the product concept, and kept adding new ideas. The Kyndryl jury loved the vision, we shared first place, and earned a year-long internship to keep building the app.",
       "highlights": [
-        "Built the first cross-platform MVP with Kyndryl mentors.",
+        "Presented our product vision to the jury.",
         "Won the challenge and earned an internship to continue development."
       ],
       "links": [
@@ -133,10 +139,10 @@
     },
     "ja_expo": {
       "title": "JA Expo",
-      "description": "We brought Plantiful to JA Expo to test it with thousands of visitors and collect feedback on physical prototypes.\n\nPresenting on stage helped us refine our story, and the fair introduced new partners who joined the pilot.",
+      "description": "The technical side of the app was already validated and in active development. At the very last minute we received an invitation to JA EXPO, and within a month we had to prepare the annual report, business model, and monetization plan. In Prague's Harfa Gallery we presented Plantiful to thousands of visitors and collected feedback from them and the category judges.\n\nWe won Best Business Pitch and finished in second place in the STEM category.",
       "highlights": [
         "Gathered feedback from 2,000+ visitors during live demos.",
-        "Signed new beta testers and marketplace partners on-site."
+        "Advanced to the TOP 10 companies by winning Best Business Pitch."
       ],
       "links": [
         {
@@ -155,10 +161,10 @@
     },
     "fekt_eeict": {
       "title": "FEKT EEICT",
-      "description": "We presented Plantiful at the Student EEICT 2024 conference hosted by FEKT VUT in Brno, sharing how our app uses Plant.id data to guide everyday care.\n\nAn academic and industry jury awarded the poster third place, and their feedback shaped the next iteration of our product.",
+      "description": "Another stop on the journey was the high-school track of the VUT FEKT EEICT conference. It became our biggest challenge yet—the field was stacked with great teams. We had to write a technical paper, document the algorithms, explain how we implemented the Plant.id API, and describe the entire technology stack behind the app.\n\nA jury of academics and industry mentors awarded us third place, and their feedback helped us polish the last bugs before release.",
       "highlights": [
-        "Won 3rd place in the Student EEICT 2024 poster session for Plantiful.",
-        "Demonstrated how Plant.id’s AI powers actionable plant-care guidance."
+        "Won 3rd place in the EEICT 2024 high-school track.",
+        "Wrote a technical whitepaper outlining the app's architecture."
       ],
       "links": [
         {
@@ -168,8 +174,8 @@
           "type": "article"
         },
         {
-          "label": "Conference poster (PDF)",
-          "description": "Download the Plantiful poster we presented at Student EEICT 2024.",
+          "label": "Technical whitepaper (PDF)",
+          "description": "The whitepaper we submitted to Student EEICT 2024.",
           "href": "/Plantiful.pdf",
           "type": "resource"
         }
@@ -177,10 +183,10 @@
     },
     "release": {
       "title": "Open-source Release",
-      "description": "We finally open-sourced the Plantiful experience so others can build plant care experiments faster.\n\nThe release bundles the mobile app, knowledge base and design system we matured along the journey.",
+      "description": "We spent months debating what comes next. Without outside investment we couldn't compete with international teams that can burn millions before the first revenue, so we decided to give everything back to the community—completely free. Anyone can use our app as a template, learn from our mistakes, and keep shaping the vision.",
       "highlights": [
-        "Open-sourced the Plantiful codebase and design system.",
-        "Documented contributor workflows and the first public roadmap."
+        "Open-sourced the entire Plantiful codebase and design system.",
+        "Documented the full technology stack and implementation."
       ],
       "links": [
         {

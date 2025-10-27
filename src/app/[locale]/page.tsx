@@ -187,19 +187,27 @@ export default function Home() {
   const introSteps = [
     {
       index: "1",
+      shortTitle: t("appAccess.steps.scan.short_title"),
       title: t("appAccess.steps.scan.title"),
       description: t("appAccess.steps.scan.description"),
     },
     {
       index: "2",
+      shortTitle: t("appAccess.steps.organize.short_title"),
       title: t("appAccess.steps.organize.title"),
       description: t("appAccess.steps.organize.description"),
     },
     {
       index: "3",
+      shortTitle: t("appAccess.steps.care.short_title"),
       title: t("appAccess.steps.care.title"),
       description: t("appAccess.steps.care.description"),
     },
+  ];
+  const mobileStepLabels = [
+    t("appAccess.steps.scan.mobile_label"),
+    t("appAccess.steps.organize.mobile_label"),
+    t("appAccess.steps.care.mobile_label"),
   ];
   const appGalleryAlt = t("appAccess.gallery.primary_alt");
 
@@ -366,15 +374,43 @@ export default function Home() {
             <div className="mt-3 h-1.5 w-24 bg-emerald-800 rounded" />
           </div>
 
-          <div className="mt-16 grid items-center justify-items-center gap-y-0 gap-x-1 md:gap-x-2 lg:gap-x-3 md:grid-cols-[1.05fr_0.95fr]">
-            <div className="max-w-[640px] w-full">
+          <div className="mt-16 md:hidden">
+            <div className="flex w-full items-center justify-center gap-4">
+              <div className="relative flex w-[128px] shrink-0 h-[360px] flex-col items-center justify-between px-6">
+                <div className="pointer-events-none absolute left-1/2 inset-y-2 w-[8px] -translate-x-1/2 bg-emerald-500/30 z-0" />
+                {introSteps.map((step, index) => (
+                  <div key={step.index} className="relative flex justify-center">
+                    <div className="relative z-10 flex h-[4.25rem] w-[4.25rem] items-center justify-center overflow-hidden rounded-full bg-emerald-600 text-[0.78rem] font-semibold uppercase tracking-[0.12em] text-white shadow-[0_20px_38px_rgba(12,83,56,0.28)]">
+                      <span>{mobileStepLabels[index] ?? step.shortTitle}</span>
+                      <div className="pointer-events-none absolute -bottom-7 left-1/2 h-10 w-10 -translate-x-1/2 rotate-45 rounded-[8px] bg-emerald-400/35" />
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="flex min-w-[200px] flex-1 justify-center">
+                <div className="overflow-hidden rounded-none border-0 bg-transparent shadow-none w-full max-w-[320px] md:rounded-[2.5rem] md:border md:border-neutral-200 md:bg-white md:shadow-[0_25px_60px_rgba(15,23,42,0.12)]">
+                  <Image
+                    src="/timeline/real_app.png"
+                    alt={appGalleryAlt}
+                    width={1000}
+                    height={2092}
+                    className="h-auto w-full"
+                    sizes="(min-width: 640px) 320px, 75vw"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-16 hidden md:grid md:grid-cols-[minmax(0,_1fr)_minmax(0,_0.85fr)] md:items-center md:gap-x-8">
+            <div className="w-full max-w-[640px]">
               <div className="relative mt-12">
                 <div className="absolute left-7 top-[3.35rem] bottom-[3.35rem] w-[3px] bg-emerald-500/30" />
                 <div className="flex flex-col gap-12">
-                  {introSteps.map((step, idx) => (
-                    <div key={step.title} className="relative pl-20">
-                      <div className="absolute left-[0.4rem] top-1/2 -translate-y-1/2 flex h-12 w-12 items-center justify-center">
-                        <div className="relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-emerald-600 text-sm font-semibold text-white shadow-[0_12px_25px_rgba(12,83,56,0.28)]">
+                  {introSteps.map((step) => (
+                    <div key={step.title} className="relative pl-16 pr-4">
+                      <div className="absolute left-[0.3rem] top-1/2 -translate-y-1/2 flex h-12 w-12 items-center justify-center">
+                        <div className="relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-emerald-600 text-base font-semibold text-white shadow-[0_12px_25px_rgba(12,83,56,0.28)]">
                           <span>{step.index}</span>
                           <div className="pointer-events-none absolute -bottom-5 left-1/2 h-6 w-6 -translate-x-1/2 rotate-45 rounded-[6px] bg-emerald-400/35" />
                         </div>
@@ -393,15 +429,15 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="flex justify-center md:justify-center">
-              <div className="overflow-hidden rounded-[2.5rem] border border-neutral-200 bg-white shadow-[0_25px_60px_rgba(15,23,42,0.12)] w-full max-w-[280px] sm:max-w-[320px] md:max-w-[340px] lg:max-w-[360px]">
+            <div className="flex justify-center">
+              <div className="overflow-hidden rounded-[2.5rem] border border-neutral-200 bg-white shadow-[0_25px_60px_rgba(15,23,42,0.12)] w-full max-w-[340px] lg:max-w-[360px]">
                 <Image
                   src="/timeline/real_app.png"
                   alt={appGalleryAlt}
                   width={1000}
                   height={2092}
                   className="h-auto w-full"
-                  sizes="(min-width: 1280px) 360px, (min-width: 768px) 320px, 70vw"
+                  sizes="(min-width: 1280px) 360px, (min-width: 768px) 320px, 320px"
                 />
               </div>
             </div>
@@ -660,7 +696,7 @@ export default function Home() {
               })}
           </div>
 
-          <TeamSignatures className="-mt-6 sm:mt-10 max-w-[900px]" />
+          <TeamSignatures className="mt-8 sm:mt-10 max-w-[900px]" />
         </div>
       </section>
     </main>

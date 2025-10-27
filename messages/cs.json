@@ -1,5 +1,5 @@
 {
-  "header": {
+"header": {
     "logo_alt": "Plantiful"
   },
   "hero": {
@@ -21,14 +21,20 @@
     "title_accent": "",
     "steps": {
       "scan": {
+        "short_title": "Skenuj",
+        "mobile_label": "Skenuj",
         "title": "Naskenuj rostlinu pomocí své kamery",
         "description": "Okamžitě identifikujeme rostlinu za pomocí Plant.ID API."
       },
       "organize": {
+        "short_title": "Přidej",
+        "mobile_label": "Přidej",
         "title": "Přidej ji do své Plantiful knihovny",
         "description": "Zařaď rostlinu do správného pokoje, přidej k ní fotku, pojmenuj ji a zaznamenej její aktuální stav."
       },
       "care": {
+        "short_title": "Pečuj",
+        "mobile_label": "Pěstuj",
         "title": "O zbytek se postaráme my!",
         "description": "Plantiful naplánuje zalévací cyklus a chytré připomínky, abys zůstal v obraze."
       }
@@ -47,12 +53,12 @@
   "teamMessage": {
     "title": "Slovo od našeho týmu",
     "title_accent": "týmu",
-    "description": "Plantiful vzniklo jako středoškolský experiment, ze kterého vykvetlo něco mnohem většího. [uzavreni]...Ale všechno dobré jednou končí, uzavřeli jsme naši práci a vydali produkt, dokumentaci i design systém jako open source, aby mohl kdokoli pokračovat v naší cestě.\n\nMobilní aplikaci Plantiful zatím nenajdete v App Store ani na Google Play. Díky open-source kódu si ji ale můžeš vyzkoušet už dnes, nebo nám napsat o připravené demo.",
+    "description": "Plantiful vzniklo jako středoškolský experiment, ze kterého vykvetlo něco mnohem většího. Na začátku nikdo z nás neměl zkušenosti s vývojem mobilních aplikací. A vlastně ani o rostlinách jsme moc něvěděli... Museli jsme se vše naučit po cestě a jsme na naši práci hrdí. Bohužel, vše dobré jednou končí, a tak jsme i my uzavřeli naši práci a vydali produkt, dokumentaci i design systém jako open-source, aby mohl kdokoli pokračovat v naší cestě.\n\nNaši aplikaci Plantiful zatím nenajdete v App Store ani na Google Play. Díky open-source kódu si ji ale můžeš vyzkoušet už dnes, nebo nám napsat o připravené demo.",
     "image_alt": "Fotografie týmu Plantiful v telefoním mockupu"
   },
   "acks": {
     "title": "Poděkování",
-    "description": "Jsme nesmírně vděční mentorům z RedHat Summer Campu, Kačce a Janě z Kyndrylu, Tomáši Cahovi a Lence Hruškové ze Střední školy Purkyňova, Brno, Liboru Hořenímu z JICu a také porotcům z JA Czech a všem ostatním, kteří nám dali prostor experimentovat, trpělivě sdíleli své zkušenosti a věřili, že Plantiful může skutečně pomáhat lidem.\n\nDěkujeme, že jste nám pomohli Plantiful rozkvést.",
+    "description": "Jsme nesmírně vděční mentorům z RedHat Summer Campu, Kačce a Ireně z Kyndrylu, Tomáši Cahovi a Lence Hruškové ze Střední školy Purkyňova, Brno, Liboru Hořenímu z JICu a také porotcům z JA Czech a všem ostatním, kteří nám dali prostor experimentovat, trpělivě sdíleli své zkušenosti a věřili v naši vizi.\n\nDěkujeme, že jste nám pomohli Plantiful rozkvést.",
     "image_alt": "Ilustrace podaných rukou symbolizující spolupráci"
   },
   "timeline": {
@@ -88,7 +94,7 @@
     },
     "kyndryl_challenge": {
       "title": "Kyndryl Challenge",
-      "description": "Výhra v RedHatu nás namotivovala v nápadu pokračovat dál a přihlásili jsme se do Kyndryl Challenge, kde jsme znova prošli řadou užitečných workshopů. Zaměřili jsme se na naše cílové publikum, zkompletovali projektový nápad a ještě k němu mnohé přidali. Porotcům z Kyndrylu se náš nápad velice líbil a společně s jíným týmem jsme vyhráli. Byla nám nabídnuta stáž na rok a začali jsme vytvářet aplikaci.",
+      "description": "Výhra v RedHatu nás namotivovala v nápadu pokračovat dál a přihlásili jsme se do Kyndryl Challenge, kde jsme znovu prošli řadou užitečných workshopů. Zaměřili jsme se na naše cílové publikum, zkompletovali projektový nápad a ještě k němu mnohé přidali. Porotcům z Kyndrylu se náš nápad velice líbil a společně s jíným týmem jsme vyhráli. Byla nám nabídnuta stáž na rok a začali jsme vytvářet aplikaci.",
       "highlights": [
         "Představili jsme porotcům vizi naší aplikace.",
         "V soutěži jsme zvítězili a získali nabídku stáže."
@@ -132,7 +138,7 @@
     },
     "ja_expo": {
       "title": "JA Expo",
-      "description": "Technickou stránku aplikace jsme již měli ověřenou a aktivně na ní pracovali. Na poslední chvíli jsme ale dostali pozvánku na JA EXPO, během měsíce jsme museli vypracovat výroční zprávu, business model a způsob monetizace. Naši aplikaci jsme potom mohli v Praze, v Galerii Harfa odprezentovat před tisíci návštěvníky a získali zpětnou vazbu nejed on nich, ale i porotců různých kategorií.\n\nVyhráli jsme kategorii Best Business Pitch a umístili se na druhém místě v nejlepší STEM projekt.",
+      "description": "Technickou stránku aplikace jsme již měli ověřenou a aktivně na ní pracovali. Na poslední chvíli jsme ale dostali pozvánku na JA EXPO, během měsíce jsme museli vypracovat výroční zprávu, business model a způsob monetizace. Naši aplikaci jsme potom mohli v Praze, v Galerii Harfa, odprezentovat před tisíci návštěvníky a získali zpětnou vazbu nejed on nich, ale i porotců různých kategorií.\n\nVyhráli jsme kategorii Best Business Pitch a umístili se na 2. místě v kategorii nejlepší STEM projekt.",
       "highlights": [
         "Získali jsme zpětnou vazbu od více než 2 000 návštěvníků během živých ukázek.",
         "Postoupil jsme do finále mezi TOP10 firem výhrou v kategorii Best Business Pitch."
@@ -154,10 +160,10 @@
     },
     "fekt_eeict": {
       "title": "FEKT EEICT",
-      "description": "Plantiful jsme představili na konferenci Student EEICT 2024 na FEKT VUT v Brně, kde jsme ukázali, jak aplikace využívá data Plant.id pro každodenní péči.\n\nPorota složená z akademiků a zástupců firem ocenila náš poster třetím místem a její zpětná vazba nám pomohla nasměrovat další verzi produktu.",
+      "description": "Další konference, na které jsme představili Plantiful, byla středoškolská sekce VUT FEKT, EEICT. Byla to naše doposud největší výzva, konkurence byla opravdu nabitá. Museli jsme sepsat technický dokument, popsat algoritmizaci, implementaci Plant.id API a technologický stack naší aplikace.\n\nPorota složená z akademiků a zástupců firem nás ocenila třetím místem a její zpětná vazba nám pomohla doladit poslední chybky v kódu.",
       "highlights": [
-        "Získali jsme 3. místo v posterové sekci Student EEICT 2024.",
-        "Ukázali jsme, jak AI Plant.id převádí data o rostlinách do praktických doporučení péče."
+        "Získali jsme 3. místo ve středoškolské sekci EEICT 2024.",
+        "Sepsali jsme technický dokument popisující technologie naší aplikace."
       ],
       "links": [
         {
@@ -167,8 +173,8 @@
           "type": "article"
         },
         {
-          "label": "Konferenční poster (PDF)",
-          "description": "Poster Plantiful představený na Student EEICT 2024.",
+          "label": "Technický dokument (PDF)",
+          "description": "White paper jako přihláška na Student EEICT 2024.",
           "href": "/Plantiful.pdf",
           "type": "resource"
         }
@@ -176,10 +182,10 @@
     },
     "release": {
       "title": "Open-source vydání",
-      "description": "Plantiful jsme uvolnili jako open-source, aby mohli další nadšenci rychleji stavět vlastní experimenty s péčí o rostliny.\n\nSoučástí releasu je mobilní aplikace, znalostní báze i design systém, který jsme na cestě vyladili.",
+      "description": "Dlouho jsme přemýšleli, kam dál, jelikož bez investice nemůžeme konkurovat nadnárodním firmám s desítkami zaměstnanců, které jsou ochotné spálit vysoké miliony korun, než přijde první zisk, rozhodli jsme se všechnu naši práci vydat do světa - a to pro všechny zdarma. Kdokoliv může použít naši aplikaci jako šablonu a to se nám líbí. Mohou se poučit z našich chyb a stavět dál na naší vizi.",
       "highlights": [
-        "Open-sourceovali jsme kód i design systém Plantiful.",
-        "Zdokumentovali jsme proces pro přispěvatele a první veřejný roadmap Plantiful."
+        "Open-sourceonuli jsme kód i design systém Plantiful.",
+        "Zdokumentovali jsme celý technologický stack a implementaci"
       ],
       "links": [
         {
