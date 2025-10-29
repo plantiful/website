@@ -51,6 +51,7 @@ export const getTimelineData = (t: TranslationFunction) => [
             alt: t("timeline.gallery.summercamp"),
             fill: true,
             sizes: imageSizes,
+            imageClassName: "object-bottom",
             priority: true,
           },
           {
@@ -58,6 +59,7 @@ export const getTimelineData = (t: TranslationFunction) => [
             alt: t("timeline.gallery.summercamp_stage"),
             fill: true,
             sizes: imageSizes,
+            imageClassName: "object-bottom",
           },
         ]}
         links={getLinks(t, "timeline.foreword.links")}
@@ -77,12 +79,14 @@ export const getTimelineData = (t: TranslationFunction) => [
             alt: t("timeline.gallery.kyndryl_challenge_stage"),
             fill: true,
             sizes: imageSizes,
+            imageClassName: "object-bottom",
           },
           {
             src: "/timeline/kyndryl_challenge_2.jpg",
             alt: t("timeline.gallery.kyndryl_challenge_pitch"),
             fill: true,
             sizes: imageSizes,
+            imageClassName: "object-bottom",
           },
         ]}
         links={getLinks(t, "timeline.kyndryl_challenge.links")}
@@ -98,16 +102,17 @@ export const getTimelineData = (t: TranslationFunction) => [
         highlights={getHighlights(t, "timeline.kyndryl.highlights")}
         media={[
           {
-            src: "/timeline/phones.png",
+            src: "/timeline/kyndryl_intern.JPG",
             alt: t("timeline.gallery.kyndryl_product"),
             fill: true,
             sizes: imageSizes,
           },
           {
-            src: "/timeline/kyndryl_intern.JPG",
+            src: "/timeline/figma.png",
             alt: t("timeline.gallery.kyndryl_intern"),
             fill: true,
             sizes: imageSizes,
+            imageClassName: "object-bottom",
           },
         ]}
         links={getLinks(t, "timeline.kyndryl.links")}
@@ -133,6 +138,7 @@ export const getTimelineData = (t: TranslationFunction) => [
             alt: t("timeline.gallery.ja_expo_team"),
             fill: true,
             sizes: imageSizes,
+            imageClassName: "object-bottom",
           },
         ]}
         links={getLinks(t, "timeline.ja_expo.links")}
@@ -152,12 +158,14 @@ export const getTimelineData = (t: TranslationFunction) => [
             alt: t("timeline.gallery.fekt_stage"),
             fill: true,
             sizes: imageSizes,
+            imageClassName: "object-bottom",
           },
           {
             src: "/timeline/fekt_award.jpg",
             alt: t("timeline.gallery.fekt_award"),
             fill: true,
             sizes: imageSizes,
+            imageClassName: "object-bottom",
           },
         ]}
         links={getLinks(t, "timeline.fekt_eeict.links")}
@@ -173,14 +181,20 @@ export const getTimelineData = (t: TranslationFunction) => [
         highlights={getHighlights(t, "timeline.release.highlights")}
         media={[
           {
-            src: "https://assets.aceternity.com/templates/startup-1.webp",
+            src: "/timeline/phones.png",
             alt: t("timeline.gallery.release_preview"),
+            fill: true,
+            sizes: imageSizes,
+          },
+          {
+            src: "/PhoneShowcase.png",
+            alt: t("timeline.gallery.release_phones"),
             fill: true,
             sizes: imageSizes,
           },
         ]}
         links={getLinks(t, "timeline.release.links")}
-        mediaColumns={1}
+        mediaColumns={2}
       />
     ),
   },

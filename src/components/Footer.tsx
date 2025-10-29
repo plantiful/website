@@ -38,39 +38,49 @@ export default function Footer() {
     {
       src: "/purkynka.png",
       alt: t("footer.partners.purkynka"),
+      href: "https://purkynka.cz/",
     },
     {
       src: "/kyndryl.png",
       alt: t("footer.partners.kyndryl"),
+      href: "https://www.kyndryl.com/",
     },
     {
       src: "/JA.png",
       alt: t("footer.partners.ja"),
+      href: "https://jaczech.org/",
     },
     {
       src: "/plantid.png",
       alt: t("footer.partners.plantid"),
       offsetClass: "-translate-y-3.5 sm:-translate-y-[12px]",
+      href: "https://plant.id/",
     },
   ];
 
   return (
     <footer className="w-full">
       <div className="mx-auto w-full max-w-[1600px] px-6 sm:px-10 md:px-16 lg:px-24">
-        <div className="grid grid-cols-2 gap-12 py-10 sm:grid-cols-3 md:flex md:flex-wrap md:items-center md:justify-center md:gap-24 lg:gap-32">
-          {partnerLogos.map(({ src, alt, offsetClass }) => (
+        <div className="grid grid-cols-2 gap-12 py-10 sm:grid-cols-3 md:grid-cols-4 md:gap-16 lg:gap-24 xl:gap-32 place-items-center">
+          {partnerLogos.map(({ src, alt, offsetClass, href }) => (
             <div
               key={src}
               className="flex h-16 items-center justify-center sm:h-20 md:h-24 lg:h-[4.5rem]"
             >
-              <Image
-                src={src}
-                alt={alt}
-                width={200}
-                height={60}
-                className={`max-h-full w-auto object-contain ${offsetClass ?? ""}`}
-                priority={src === "/purkynka.png"}
-              />
+              <a
+                href={href}
+                {...(href ? { target: "_blank", rel: "noreferrer noopener" } : {})}
+                className={href ? "inline-flex" : undefined}
+              >
+                <Image
+                  src={src}
+                  alt={alt}
+                  width={200}
+                  height={60}
+                  className={`max-h-full w-auto object-contain ${offsetClass ?? ""}`}
+                  priority={src === "/purkynka.png"}
+                />
+              </a>
             </div>
           ))}
         </div>

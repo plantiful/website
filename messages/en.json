@@ -54,12 +54,12 @@
   "teamMessage": {
     "title": "A Word From Our Team",
     "title_accent": "Team",
-    "description": "Plantiful began as a high-school experiment that grew into something much bigger. None of us had experience building mobile apps when we started, and we barely knew anything about plants either... We learned everything along the way and we're proud of what we created. Still, every good story wraps up eventually, so we closed this chapter by releasing the product, documentation, and design system as open source for anyone to continue the journey.\n\nYou still won't find Plantiful in the App Store or on Google Play. Thanks to the open-source code you can try it today, or drop us a line for a ready-made demo.",
+    "description": "Plantiful started as a high-school experiment that blossomed into something much bigger. None of us had built a mobile app before and, honestly, we barely knew anything about plants. We learned everything on the fly and we're proud of what we created. Every good story ends eventually, so we closed this chapter by open-sourcing the product, documentation, and design system—letting anyone continue the journey, learn from our mistakes, or keep building on the vision.\n\nYou still won't find Plantiful in the App Store or on Google Play. Thanks to the open-source code you can try it today, or send us a note for a ready-made demo.",
     "image_alt": "Plantiful team photo in a phone mockup"
   },
   "acks": {
     "title": "Acknowledgement",
-    "description": "We're immensely grateful to the mentors from RedHat Summer Camp, Kacka and Irena from Kyndryl, Tomas Caha and Lenka Hruskova from Purkynka High School in Brno, Libor Horeni from JIC, the JA Czech jury, and everyone else who gave us space to experiment, shared their expertise, and believed in our vision.\n\nThank you for helping Plantiful bloom.",
+    "description": "We're immensely grateful to the mentors from RedHat Summer Camp, Kačka and Irena from Kyndryl, Tomáš Caha and Lenka Hrušková from Purkynka High School in Brno, Libor Hoření from JIC, the team at Kindwise, the JA Czech jury, and everyone else who gave us space to experiment, patiently shared their experience, and believed in our vision.\n\nThank you for helping Plantiful bloom.",
     "image_alt": "Illustration of a handshake symbolising collaboration"
   },
   "timeline": {
@@ -75,14 +75,15 @@
       "fekt_stage": "Presenting our research at the FEKT EEICT conference",
       "fekt_award": "Receiving recognition at the FEKT EEICT awards ceremony",
       "release_preview": "Preview of the open-source Plantiful interface",
+      "release_phones": "Phones showing the Plantiful app screens for the open-source release",
       "summercamp_stage": "Presenting Plantiful during the Red Hat Summer Camp finale"
     },
     "foreword": {
       "title": "RedHat Summer Camp",
-      "description": "Plantiful was created during Red Hat Summer Camp 2022 where a week of product workshops pushed us to validate the idea, prototype the first flows and pitch in front of mentors.\n\nWithin a few hours we refined the story, the presentation and the first interface. The competition was strong, but we still took the win that convinced us the project had a future.",
+      "description": "Plantiful was born during Red Hat Summer Camp 2022, where a series of workshops guided us toward the final project. Within a few hours we clarified the idea, the pitch, and the deck. The competition was fierce, but we still managed to win.",
       "highlights": [
-        "Formed the Plantiful founding team and validated the concept in 48 hours.",
-        "Won the Red Hat Summer Camp finale and secured ongoing mentorship."
+        "Within 48 hours we shaped Plantiful's vision and, with mentor support, built the MVP.",
+        "Presented our idea and won Best Project at Red Hat Summer Camp."
       ],
       "links": [
         {
@@ -95,10 +96,10 @@
     },
     "kyndryl_challenge": {
       "title": "Kyndryl Challenge",
-      "description": "Our Red Hat win pushed us to apply for the nationwide Kyndryl Challenge, where another round of hands-on workshops waited for us. We doubled down on understanding the target audience, finished shaping the product concept, and kept adding new ideas. The Kyndryl jury loved the vision, we shared first place, and earned a year-long internship to keep building the app.",
+      "description": "Winning Red Hat motivated us to keep going, so we entered the Kyndryl Challenge and went through another round of hands-on workshops. We doubled down on understanding our audience, completed the project concept, and added even more ideas. The Kyndryl judges loved it, we shared first place with another team, and we were offered a year-long internship to start building the app.",
       "highlights": [
-        "Presented our product vision to the jury.",
-        "Won the challenge and earned an internship to continue development."
+        "Presented our vision to the jury.",
+        "Won the challenge and earned an internship to keep building Plantiful."
       ],
       "links": [
         {
@@ -106,56 +107,44 @@
           "description": "School article covering the Kyndryl Challenge finale where Plantiful earned a Kyndryl internship.",
           "href": "https://www.purkynka.cz/aktualne/finale-5-rocniku-souteze-kyndryl-challenge/",
           "type": "article"
-        },
-        {
-          "label": "Behind the scenes with Kyndryl",
-          "description": "Interview about building Plantiful during the mentorship program.",
-          "href": "https://example.com/press/plantiful-kyndryl-interview",
-          "type": "press"
         }
       ]
     },
     "kyndryl": {
       "title": "Kyndryl Internship",
-      "description": "During the Kyndryl internship we rebuilt the prototype with production tooling, automated plant care suggestions and designed integrations for partner nurseries.\n\nThe experience taught us how to run continuous discovery while shipping a polished mobile experience.",
+      "description": "During the year-long Kyndryl internship we slowly turned the prototype into reality. We brought in a dedicated designer, Honza Truneček, who played a key role in shaping the visual identity. We designed the final look and features of the app, worked as a team, prepared for more competitions, kept developing the product, and consulted everything with our project manager from Kyndryl.",
       "highlights": [
-        "Automated care plans for 150+ plants with real nursery data.",
-        "Shipped cloud architecture that scales to partner greenhouses."
+        "Designed the final look and feature set of the app.",
+        "Worked as a team, prepared for more competitions, and continued building the product."
       ],
       "links": [
         {
-          "label": "Internship case study",
-          "description": "Deep dive into how we scaled Plantiful with Kyndryl engineers.",
-          "href": "https://example.com/case-study/plantiful-kyndryl-internship",
-          "type": "article"
+          "label": "Competition brand design (Figma)",
+          "description": "Visual identity, decks, and booth assets prepared for our showcases.",
+          "href": "https://www.figma.com/design/SfXts1RSnFRiygDjpDLO2u/JA?m=auto&t=lVTghHSNWNrZmuSd-1",
+          "type": "resource"
         },
         {
-          "label": "Prototype demo",
-          "description": "Video walkthrough of the beta produced during the internship.",
-          "href": "https://example.com/videos/plantiful-kyndryl-demo",
-          "type": "video"
+          "label": "Plantiful app UI (Figma)",
+          "description": "The full mobile design system and flows built during the internship.",
+          "href": "https://www.figma.com/design/ltyTl3lRKydZutFWUKO1Nv/App?m=auto&t=lVTghHSNWNrZmuSd-1",
+          "type": "resource"
         }
       ]
     },
     "ja_expo": {
       "title": "JA Expo",
-      "description": "The technical side of the app was already validated and in active development. At the very last minute we received an invitation to JA EXPO, and within a month we had to prepare the annual report, business model, and monetization plan. In Prague's Harfa Gallery we presented Plantiful to thousands of visitors and collected feedback from them and the category judges.\n\nWe won Best Business Pitch and finished in second place in the STEM category.",
+      "description": "We had already validated the technical side of the app and were actively building it. At the last minute we received an invitation to JA EXPO, and within a month we had to prepare the annual report, business model, and monetisation plan. In Prague's Harfa Gallery we presented Plantiful to thousands of visitors and collected feedback from them as well as from the category judges.\n\nWe won Best Business Pitch and finished second in the STEM category.",
       "highlights": [
-        "Gathered feedback from 2,000+ visitors during live demos.",
-        "Advanced to the TOP 10 companies by winning Best Business Pitch."
+        "Collected feedback from more than 2,000 visitors during live demos.",
+        "Made the TOP 10 finals by winning Best Business Pitch."
       ],
       "links": [
         {
-          "label": "JA Expo highlights (CZ)",
+          "label": "JA Expo recap (CZ)",
           "description": "School article about JA Expo 2023 where Plantiful won Best Business Pitch and 2nd place in STEM.",
           "href": "https://www.purkynka.cz/aktualne/dostali-jsme-se-do-top-desitky-ja-studentskych-firem-letosniho-roku/",
           "type": "article"
-        },
-        {
-          "label": "Photo gallery",
-          "description": "Highlights from the Plantiful stand throughout the expo.",
-          "href": "https://example.com/gallery/plantiful-ja-expo",
-          "type": "resource"
         }
       ]
     },
@@ -177,6 +166,18 @@
           "label": "Technical whitepaper (PDF)",
           "description": "The whitepaper we submitted to Student EEICT 2024.",
           "href": "/Plantiful.pdf",
+          "type": "resource"
+        },
+        {
+          "label": "Student EEICT submission (CZ)",
+          "description": "Our official conference entry archived in the VUT digital library.",
+          "href": "https://dspace.vut.cz/items/0f9ba30f-2d2e-412a-a55a-78d69b722061",
+          "type": "resource"
+        },
+        {
+          "label": "Soutěžní plakát (PDF)",
+          "description": "The poster we presented at the FEKT EEICT conference.",
+          "href": "/timeline/EEICT.pdf",
           "type": "resource"
         }
       ]

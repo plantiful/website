@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<p align="center">
+  <img src="public/Plantiful.svg" alt="Plantiful Logo" height="120" />
+</p>
+
+<h2 align="center">Plantiful Website</h2>
+
+<p align="center">
+  Marketing site and interactive timeline for the Plantiful project — the award‑winning plant care platform built by high school students. This site highlights the open-source resources behind the product.
+  <br />
+</p>
+
+## Project Structure
+
+```text
+src/
+├── app/
+│   ├── [locale]/layout.tsx        # Locale-scoped root layout + SEO metadata
+│   ├── [locale]/page.tsx          # Landing page sections and timeline
+│   └── api/intl/route.ts          # next-intl routing helpers
+├── components/                    # Reusable UI primitives (timeline, buttons, cards)
+├── data/
+│   └── timelineData.tsx           # Milestones, assets and translations glue
+├── i18n/                          # Locale config + message loading
+├── lib/                           # Utilities (cn helper, smooth scroll setup)
+└── styles/                        # Global Tailwind layers and resets
+
+public/
+├── Plantiful.svg                  # Wordmark used across the site
+├── PhoneShowcase.png              # High-res hero devices
+├── timeline/                      # Timeline imagery & FEKT poster
+└── locale JSON catalogs live in /messages (cs.json, en.json)
+```
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies (Node 18+ recommended):
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```sh
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Start the dev server:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```sh
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Content & Translations
 
-## Learn More
+- Locale messages live in `messages/en.json` and `messages/cs.json`. Keys map to sections (hero, intro, timeline, footer, etc.). Keep both files in sync when updating copy.
+- Timeline milestones are described in `src/data/timelineData.tsx` and leverage the translation helpers:
+  - `toParagraphs` splits rich text into paragraphs.
+  - `getHighlights` / `getLinks` pull arrays from locale JSON.
+  - `TimelineMilestoneContent` handles responsive media lightboxes and resource cards.
+- Decorative SVGs and phone renders reside in `public/`. When swapping imagery ensure alt text keys exist in both locales (`timeline.gallery.*`).
 
-To learn more about Next.js, take a look at the following resources:
+## Styling & Motion
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Tailwind CSS drives layout (`tailwind.config.ts`, global styles in `src/styles`).
+- Smooth scrolling relies on Lenis (`src/components/SmoothScroll.tsx`).
+- Ambient parallax and artifact layers live in `src/components/ui`, using Framer Motion for subtle animations.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Internationalization
 
-## Deploy on Vercel
+- `next-intl` powers routing and locale detection (`src/i18n/routing.ts`, `middleware.ts`).
+- Locale segments (`/[locale]`) map to messages via `getMessages`.
+- Add new languages by creating `messages/<lang>.json` and updating `routing.ts`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This website is open source, released under the [MIT License](LICENSE).

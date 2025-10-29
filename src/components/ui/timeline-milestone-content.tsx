@@ -30,6 +30,7 @@ interface TimelineMilestoneContentProps {
   media?: TimelineLightboxImageProps[];
   mediaColumns?: 1 | 2 | 3;
   links?: MilestoneLink[];
+  linkColumns?: 1 | 2 | 3;
   children?: ReactNode;
 }
 
@@ -57,16 +58,25 @@ export function TimelineMilestoneContent({
   media,
   mediaColumns,
   links,
+  linkColumns,
   children,
 }: TimelineMilestoneContentProps) {
   const safeLinks = (links ?? []).filter((link) => link.href);
   const safeMedia = media ?? [];
   const resolvedColumns = mediaColumns ?? Math.min(Math.max(safeMedia.length, 1), 3);
+  const resolvedLinkColumns = Math.min(Math.max(linkColumns ?? 2, 1), 3);
 
   const mediaGridClass =
     resolvedColumns === 1
       ? "grid-cols-1"
       : resolvedColumns === 2
+      ? "sm:grid-cols-2"
+      : "sm:grid-cols-2 lg:grid-cols-3";
+
+  const linkGridClass =
+    resolvedLinkColumns === 1
+      ? "grid-cols-1"
+      : resolvedLinkColumns === 2
       ? "sm:grid-cols-2"
       : "sm:grid-cols-2 lg:grid-cols-3";
 
@@ -119,7 +129,7 @@ export function TimelineMilestoneContent({
       )}
 
       {safeLinks.length > 0 && (
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className={cn("grid gap-4", linkGridClass)}>
           {safeLinks.map((link) => {
             const isGithubResource =
               link.type === "resource" && /github\.com/i.test(link.href);
